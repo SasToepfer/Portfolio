@@ -1,0 +1,44 @@
+
+nav {
+    position: fixed;
+    top: 1rem;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+
+    >img {
+        width: 8rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    position: relative; // Wichtig, damit ::after relativ zu a positioniert wird
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--circleWidth, 10rem); 
+        height: 5rem; 
+        background-image: url('../../../assets/img/decoration_circle.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translate(-50%, -50%) scale(0); 
+        transition: transform 0.1s ease;
+        pointer-events: none; 
+        cursor: pointer;
+    }
+
+    &:hover::after {
+        transform: translate(-50%, -50%) scale(1); // Kreis wird angezeigt
+    }
+}

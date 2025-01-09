@@ -1,1 +1,8 @@
-<p>header works!</p>
+<nav>
+    <img src="" alt="">
+    <a href="#about">{{ translationService.getTranslation('about') }}</a>
+    <a href="#skills">{{ translationService.getTranslation('skills') }}</a>
+    <a href="#projects">{{ translationService.getTranslation('projects') }}</a>
+    <a href="#contact">{{ translationService.getTranslation('contact') }}</a>
+    <img [src]="languageIcon" (click)="toggleLanguage()" alt="LanguageSwitch">
+</nav>
