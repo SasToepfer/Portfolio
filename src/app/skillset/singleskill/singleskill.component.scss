@@ -1,0 +1,24 @@
+.skill {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 1rem;
+  }
+  
+  .skill img {
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }

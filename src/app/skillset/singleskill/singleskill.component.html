@@ -1,0 +1,7 @@
+<div 
+  class="skill" 
+  (mouseenter)="isHovered = true" 
+  (mouseleave)="isHovered = false">
+  <img [src]="skill.path" [alt]="skill.name">
+  <div class="tooltip" *ngIf="isHovered">{{ skill.name }}</div>
+</div>

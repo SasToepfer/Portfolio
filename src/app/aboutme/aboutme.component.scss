@@ -1,0 +1,55 @@
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    margin: 6rem;
+
+    >img {
+        width: 40%;
+        height: auto;
+        padding-right: 1rem;
+    }
+    
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;;
+        width: 40%;
+        padding-left: 1rem;
+        height: auto;
+        min-height: 400px;
+        font-size: 1.25rem;
+
+        >h2 {
+            margin: 0;
+            font-size: 3rem;
+            text-decoration: none;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 60%;
+                left: 0;
+                width: 15rem; 
+                height: 2rem; 
+                background-image: url('../../assets/img/decoration_underline_turk.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        >img {
+            width: 8rem;
+            align-self: flex-end;
+        }
+    }
+}
+
+section {
+    
+    text-align: start;
+
+}
