@@ -1,0 +1,43 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+    
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: calc(50% - 10rem);
+        margin: 0 5rem;
+
+        >span {
+            font-size: 1.25rem;
+        }
+
+        >h2 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 70%;
+                left: 0;
+                width: 13rem; 
+                height: 2rem; 
+                background-image: url('../../assets/img/decoration_underline_swirl.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+}
+
+.single-project {
+    width: calc(50% - 10rem);
+    margin: 0 5rem;
+}

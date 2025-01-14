@@ -9,8 +9,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './singleskill.component.scss'
 })
 export class SingleskillComponent {
-  @Input() skill!: { name: string; path: string }; // Erwartet eine Fähigkeit mit Name und Pfad
+  @Input() skill!: { name: string; path: string };
 
-  // Tooltip Logik (für später)
   isHovered: boolean = false;
+  
 }

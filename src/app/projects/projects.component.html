@@ -1,0 +1,18 @@
+<main>
+    <div>
+        <span> {{ isGerman ? "Mein Handwerk" : "MY CRAFT"}}</span>
+        <h2>{{ isGerman ? "Projekte" : "Projects"}}</h2>
+        <p>{{ isGerman ? "Werfen Sie einen Blick auf einige meiner Projekte, um zu sehen, wie ich"+
+        " Kreativität und technisches Know-how in der Spieleentwicklung und im Frontend-Design kombiniere."+
+        " Jedes Projekt zeigt meine Fähigkeit, responsive und benutzerfreundliche Designs mit sauberem und effizientem Code umzusetzen." 
+        : 
+        "Take a look at some of my projects to see how I combine creativity and technical skills"+
+        " in both game development and frontend design. Each project reflects my ability to create"+
+        " responsive, user-friendly designs while maintaining clean and efficient code."}}</p>
+    </div>
+    @for (item of projects; track $index) {
+        <app-singleproject class="single-project" [project]="item"></app-singleproject>
+    } @empty {
+        no projects available
+    }
+</main>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SingleskillComponent } from './singleskill/singleskill.component';
+import { Subscription } from 'rxjs';
+import { TranslationService } from '../translation.service';
 
 @Component({
   selector: 'app-skillset',
@@ -28,5 +30,22 @@ export class SkillsetComponent {
     { name: "REST API", path: "../../../assets/img/icons/restAPI_ico.png" }
   ];
 
+  isGerman : boolean = true;
+    private languageSubscription!: Subscription;
   
+  
+    constructor(private translationService: TranslationService) {
+    }
+  
+    ngOnInit() {
+      this.languageSubscription = this.translationService.language$.subscribe((isGerman) => {
+        this.isGerman = isGerman;
+      }) 
+    }
+  
+    ngOnDestroy() {
+      if (this.languageSubscription) {
+        this.languageSubscription.unsubscribe();
+      }
+    }
 }

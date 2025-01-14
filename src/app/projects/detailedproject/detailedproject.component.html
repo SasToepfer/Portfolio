@@ -1,0 +1,7 @@
+<main>
+    <h1>{{ project.name }}</h1>
+    <h2>Description</h2>
+    <p>{{ isGerman ? project.description_long_de : project.description_long_eng }}</p>
+    <h2>{{ isGerman ? "Details zur Umsetzung" : "Implementation Details" }}</h2>
+    <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
+</main>
