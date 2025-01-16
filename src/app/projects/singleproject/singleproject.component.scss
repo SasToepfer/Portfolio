@@ -1,8 +1,8 @@
+@use '../../../styles/mixins.scss' as *;
+
 main {
-    display: flex;
+    @include standard-flex();
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 3rem;
 
     > a{

@@ -1,0 +1,12 @@
+<main>
+    <div>
+        <img src="../../assets/img/thoughtsArrowPurple.png" alt="">
+        <span>{{ isGerman ? "In ihren Worten":"In their words"}}</span>
+    </div>
+    <h2>{{ isGerman ? "Gedanken von Kollegen":"colleagues thoughts"}}</h2>
+</main>
+<div class="cards-container">
+    @for (item of reviews; track $index) {
+        <app-reviewcard class="cards" [review]="item"></app-reviewcard>
+    }
+</div>

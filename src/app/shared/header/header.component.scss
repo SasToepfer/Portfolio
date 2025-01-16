@@ -1,10 +1,9 @@
-
+@use '../../../styles/mixins.scss' as *;
 nav {
     position: absolute;
     top: 1rem;
     width: 95%;
-    display: flex;
-    justify-content: space-between;
+    @include standard-flex(space-between);
 
     >img {
         width: 8rem;
@@ -13,6 +12,10 @@ nav {
             cursor: pointer;
         }
     }
+}
+
+.black-text {
+    color: black;
 }
 
 a {
@@ -24,21 +27,21 @@ a {
     &::after {
         content: '';
         position: absolute;
-        top: 50%;
+        top: -90%;
         left: 50%;
-        width: var(--circleWidth, 10rem); 
-        height: 5rem; 
+        width: var(--circleWidth, 10rem);
+        height: 5rem;
         background-image: url('../../../assets/img/decoration_circle.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transform: translate(-50%, -50%) scale(0); 
-        transition: transform 0.1s ease;
-        pointer-events: none; 
-        cursor: pointer;
+        transform: translateX(-50%);
+        clip-path: inset(0 0 100% 0); // Anfangszustand: komplett ausgeblendet
+        transition: clip-path 0.25s ease; // Animation
+        pointer-events: none;
     }
 
     &:hover::after {
-        transform: translate(-50%, -50%) scale(1); // Kreis wird angezeigt
+        clip-path: inset(0 0 0 0); // Endzustand: Bild vollständig sichtbar
     }
 }

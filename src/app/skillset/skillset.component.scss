@@ -1,5 +1,5 @@
+@use '../../styles/mixins.scss' as *;
 main {
-    // height: 500px;
     background-image: url(../../assets/img/SkillsBG.png);
     background-size: cover;
     background-position: bottom;
@@ -15,10 +15,8 @@ main {
         width: 25%;
         margin: 10rem 1rem;
         margin-bottom: 0;
-        display: flex;
+        @include standard-flex(start, end);
         flex-direction: column;
-        align-items: end;
-        justify-content: start;
         font-size: 1.5rem;
 
         >h2 {
@@ -44,9 +42,7 @@ main {
         position: relative;
         top: 1rem;
         margin: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include standard-flex();
 
     }
 }
@@ -58,8 +54,7 @@ main {
 .skills-grid {
     margin: auto;
     align-self: center;
-    display: flex;
-    justify-content: center;
+    @include standard-flex();
     flex-wrap: wrap;
     width: 50%;
     height: auto;

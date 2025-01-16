@@ -1,0 +1,30 @@
+<main>
+    <div class="left">
+        <h3>{{isGerman ? "Kontaktier mich" : "Contact me"}}</h3>
+        <h2>{{isGerman ? "Bereit zusammen zu Arbeiten?" : "Ready to work together?"}}</h2>
+        <p>{{isGerman ? "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihren Ideen zu hören und mit meiner Arbeit zu Ihren Projekten beizutragen." : "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work."}} </p>
+        <p>{{isGerman ? "Nehmen Sie Kontakt mit mir auf und teilen Sie mir Ihre Projektdetails mit. Ich würde mich freuen, Ihnen dabei helfen zu können, Software oder Webseiten zu erstellen, die Ihren Bedürfnissen entspricht!" : "Feel free to get in touch with your project details. I'd love the opportunity to help create a website that meets your needs!"}} </p>
+        <img src="../../assets/img/swirlArrowRightYellow.png" alt="">
+    </div>
+    <div class="right">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <label for="name">Name</label>
+            <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name.." required>
+            @if (!name.valid && name.touched && !name.disabled) {
+                <span>Pleaser enter a valid Name</span>
+            }
+            <label for="email">Email</label>
+            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email.." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            @if (!email.valid && email.touched && !email.disabled) {
+                <span>Pleaser enter a valid Email</span>
+            }
+            <label for="message">Message</label>
+            <textarea #message="ngModel" [(ngModel)]="contactData.message" type="message" id="message" name="message" placeholder="Your message.." required></textarea>
+            
+            @if (!message.valid && message.touched && !message.disabled) {
+                <span>Pleaser enter a message</span>
+            }
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</main>

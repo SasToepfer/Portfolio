@@ -1,8 +1,8 @@
 <nav>
     <img src="" alt="">
     <ng-container *ngIf="translationService.language$">
-        <a href="#about">{{ isGerman ? 'über mich' : 'About me' }}</a>
-        <a href="#skills">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
+        <a href="#about" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'über mich' : 'About me' }}</a>
+        <a href="#skills" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
         <a href="#projects">{{ isGerman ? 'Projekte' : 'Projects' }}</a>
         <a href="#contact">{{ isGerman ? 'Kontakt' : 'Contact' }}</a>
     </ng-container>

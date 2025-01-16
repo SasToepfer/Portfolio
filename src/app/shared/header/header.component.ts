@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslationService } from '../../translation.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +13,12 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   languageIcon: string = '../../../assets/img/switch_de.png';
   isGerman: boolean = true;
+  isProjectPage: boolean = false;
 
-  constructor(public translationService: TranslationService) {
-
+  constructor(public translationService: TranslationService, private router: Router) {
+    this.router.events.subscribe(() => {
+      this.isProjectPage = this.router.url.includes('/project/');
+    });
   }
 
   toggleLanguage() {
@@ -29,4 +33,5 @@ export class HeaderComponent {
 
     this.translationService.switchLanguage();
   }
+
 }

@@ -1,0 +1,92 @@
+@use '../../../styles/mixins.scss' as *;
+main {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    background-image: url(../../../assets/img/Notebookpaper.png);
+    background-size: cover;
+    background-position: left;
+    @include standard-flex();
+    gap: 20%;
+
+
+
+    .back {
+        align-self: start;
+
+        >a {
+            text-decoration: none;
+            color: black;
+            @include standard-flex();
+            gap: 1rem;
+            font-size: 1.25rem;
+
+            >img {
+                width: 3rem;
+            }
+        }
+    }
+
+    .left {
+        width: calc(40% - 10rem);
+        @include standard-flex();
+        flex-direction: column;
+
+        .project-information {
+            padding-left: 4rem;
+
+            >h1 {
+                font-size: 3rem;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 60%;
+                    left: 0;
+                    width: 20rem;
+                    height: 2rem;
+                    background-image: url('../../../assets/img/decoration_underline_turk.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+
+    .right {
+        width: calc(40% - 10rem);
+        @include standard-flex(center, end);
+        flex-direction: column;
+        color: whitesmoke;
+
+        >img {
+            width: 100%;
+            margin-right: 3rem;
+            border-radius: 12px;
+        }
+
+        .buttons {
+            margin-top: 3rem;
+            margin-right: 3rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .next {
+            >a {
+
+                margin-top: 3rem;
+                display: flex;
+                gap: 1rem;
+    
+                >img {
+                    width: 6rem;
+                }
+            }
+        }
+    }
+}
