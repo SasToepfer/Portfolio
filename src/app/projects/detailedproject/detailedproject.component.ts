@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { TranslationService } from '../../translation.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ProjectService } from '../../project.service';
+import { SkillsetComponent } from '../../skillset/skillset.component';
 
 @Component({
   selector: 'app-detailedproject',
@@ -17,6 +18,7 @@ export class DetailedprojectComponent {
   isGerman: boolean = true;
   private languageSubscription!: Subscription;
   private routeSubscription!: Subscription;
+  skills = SkillsetComponent.skills;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,7 +33,6 @@ export class DetailedprojectComponent {
       const projectName = paramMap.get('id');
       if (projectName) {
         this.project = this.projectService.getProjectByName(projectName);
-        console.log('Aktuelles Projekt geladen:', this.project.name);
       }
     })
 
@@ -56,5 +57,12 @@ export class DetailedprojectComponent {
     const currentIndex = projects.findIndex(p => p.name === this.project.name);
     const nextIndex = (currentIndex + 1) % projects.length;
     return projects[nextIndex].name;
+  }
+
+  getIconPath(skillName: string): string | undefined {
+    console.log(skillName);
+    
+    const skill = this.skills.find(s => s.name.toLowerCase() === skillName.toLowerCase());
+    return skill ? skill.path : undefined;
   }
 }

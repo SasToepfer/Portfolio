@@ -12,18 +12,33 @@
             <p>{{ isGerman ? project.description_long_de : project.description_long_eng }}</p>
             <h2>{{ isGerman ? "Details zur Umsetzung" : "Implementation Details" }}</h2>
             <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
+            <p>
+                <b>{{ isGerman ? 'Dauer:' : 'Duration:' }}</b>
+                {{ project.duration < 1 ? 
+                (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4 + ' Weeks') 
+                : (isGerman ? project.duration + ' Monate' : project.duration + ' Month') }}
+            </p>
+            
+            <div class="skills">
+                @for (item of project.software; track $index) {
+                    <div>
+                        <img [src]="getIconPath(item)" alt="">
+                        <span>{{item}}</span>
+                    </div>
+                }
+            </div>
         </div>
     </div>
     <div class="right">
-        <img src="{{project.path}}" alt="">
+        <img [src]="project.path" alt="">
         <div class="buttons">
             <a href="" target="_blank"><img src="../../../assets/img/GithubButton.png" alt=""></a>
             <a href="" target="_blank"><img src="../../../assets/img/LivetestButton.png" alt=""></a>
         </div>
         <div class="next">
             <a [routerLink]="['/project', goToNextProject()]">
-                {{ isGerman ? "Nächstes Projekt" : "Next Project"}};
-                <img src="../../../assets/img/swirlArrowRightYellow.png" alt="">
+                {{ isGerman ? "Nächstes Projekt" : "Next Project"}}
+                <img src="../../../assets/img/next_project_arrow_yellow.png" alt="">
             </a>
         </div>
     </div>

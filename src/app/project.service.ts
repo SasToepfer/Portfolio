@@ -14,7 +14,7 @@ export class ProjectService {
       implementation_de: "",
       implementation_eng: "",
       duration: 0,
-      path: "../../../assets/img/kanbanboard.jpg",
+      path: "./assets/img/kanbanboard.jpg",
       software: ["html", "SCSS", "Angular"],
       github: "",
       link: ""
@@ -27,9 +27,9 @@ export class ProjectService {
       description_long_de: "2D-Plattformspiel mit Sprung- und Laufmechanik, basierend auf einem objektorientierten Ansatz. Der Spieler steuert eine Figur, weicht Gegnern aus, sammelt Mana-Runen und setzt Zauber wie Feuerbälle ein, um Hindernisse zu überwinden und Gegner zu besiegen.", 
       implementation_de: "",
       implementation_eng: "",
-      duration: 0,
-      path: "../../../assets/img/ElPolloLoco.jpg",
-      software: [],
+      duration: 0.5,
+      path: "./assets/img/ElPolloLoco.jpg",
+      software: ["Javascript"],
       github: "",
       link: "" 
     },
@@ -41,9 +41,9 @@ export class ProjectService {
       description_long_de: "Das Spiel kombiniert Tower Defense und Dungeon Crawler mit Roguelike-Elementen. Spieler platzieren Gläser als Türme, die einzigartige Angriffsmuster und Werte haben, und füllen sie mit Getränken, um Fähigkeiten zu verbessern. Die Kombination aus zwei Getränken verleiht eine spezielle Fähigkeit. Besiege drei Wellen von Gegnern, um einen Schlüssel zu erhalten und neue Räume mit stärkeren Feinden oder den Boss freizuschalten.",
       implementation_de: "",
       implementation_eng: "",
-      duration: 0, 
-      path: "../../../assets/img/rltd_screenshot.png",
-      software: ["Unreal"],
+      duration: 18, 
+      path: "./assets/img/rltd_screenshot.png",
+      software: ["Unreal Engine","Git","Blender","Photoshop"],
       github: "",
       link: "" 
     },
@@ -57,7 +57,7 @@ export class ProjectService {
       implementation_eng: "",
       duration: 0,
       path: "../../../assets/img/DABubble.png",
-      software: [],
+      software: ["Angular"],
       github: "",
       link: "" 
     },

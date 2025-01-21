@@ -22,7 +22,7 @@ a {
     text-decoration: none;
     font-size: 1.5rem;
     color: whitesmoke;
-    position: relative; // Wichtig, damit ::after relativ zu a positioniert wird
+    position: relative;
 
     &::after {
         content: '';
@@ -31,17 +31,17 @@ a {
         left: 50%;
         width: var(--circleWidth, 10rem);
         height: 5rem;
-        background-image: url('../../../assets/img/decoration_circle.png');
+        background-image: url('/assets/img/decoration_circle.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         transform: translateX(-50%);
-        clip-path: inset(0 0 100% 0); // Anfangszustand: komplett ausgeblendet
-        transition: clip-path 0.25s ease; // Animation
+        clip-path: inset(0 0 100% 0); 
+        transition: clip-path 0.25s ease; 
         pointer-events: none;
     }
 
     &:hover::after {
-        clip-path: inset(0 0 0 0); // Endzustand: Bild vollständig sichtbar
+        clip-path: inset(0 0 0 0);
     }
 }

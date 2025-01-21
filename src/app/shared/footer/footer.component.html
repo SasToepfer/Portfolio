@@ -1,1 +1,11 @@
-<p>footer works!</p>
+<main>
+    <a [routerLink]="[]">
+        <button class="underline-button">Legal Notice</button>
+    </a>
+    @for (item of footerButtons; track $index) {
+        <a [href]=item.link>
+            <button class="full-button">{{item.name}}</button>
+            <img class="waving-icon" [src]=item.icon alt="Waving Hand Icon">
+        </a>
+    }
+</main>

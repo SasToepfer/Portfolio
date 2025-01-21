@@ -6,11 +6,11 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class TranslationService {
   currentLanguage: 'de' | 'en' = 'de';
-  private languageSubject = new BehaviorSubject<boolean>(true); // true = German, false = English
+  private languageSubject = new BehaviorSubject<boolean>(true); 
   language$ = this.languageSubject.asObservable();
 
   switchLanguage() {
     const currentLanguage = this.languageSubject.value;
-    this.languageSubject.next(!currentLanguage); // Sprache umschalten
+    this.languageSubject.next(!currentLanguage);
   }
 }

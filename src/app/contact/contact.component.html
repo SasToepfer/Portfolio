@@ -1,30 +1,52 @@
 <main>
-    <div class="left">
-        <h3>{{isGerman ? "Kontaktier mich" : "Contact me"}}</h3>
-        <h2>{{isGerman ? "Bereit zusammen zu Arbeiten?" : "Ready to work together?"}}</h2>
-        <p>{{isGerman ? "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihren Ideen zu hören und mit meiner Arbeit zu Ihren Projekten beizutragen." : "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work."}} </p>
-        <p>{{isGerman ? "Nehmen Sie Kontakt mit mir auf und teilen Sie mir Ihre Projektdetails mit. Ich würde mich freuen, Ihnen dabei helfen zu können, Software oder Webseiten zu erstellen, die Ihren Bedürfnissen entspricht!" : "Feel free to get in touch with your project details. I'd love the opportunity to help create a website that meets your needs!"}} </p>
-        <img src="../../assets/img/swirlArrowRightYellow.png" alt="">
-    </div>
-    <div class="right">
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <label for="name">Name</label>
-            <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name.." required>
-            @if (!name.valid && name.touched && !name.disabled) {
-                <span>Pleaser enter a valid Name</span>
-            }
-            <label for="email">Email</label>
-            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email.." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-            @if (!email.valid && email.touched && !email.disabled) {
-                <span>Pleaser enter a valid Email</span>
-            }
-            <label for="message">Message</label>
-            <textarea #message="ngModel" [(ngModel)]="contactData.message" type="message" id="message" name="message" placeholder="Your message.." required></textarea>
-            
-            @if (!message.valid && message.touched && !message.disabled) {
-                <span>Pleaser enter a message</span>
-            }
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <section>
+        <div class="left">
+            <h3>{{isGerman ? "Kontaktier mich" : "Contact me"}}</h3>
+            <h2>{{isGerman ? "Bereit zusammen zu Arbeiten?" : "Ready to work together?"}}</h2>
+            <p>{{isGerman ? "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihren Ideen zu hören und mit meiner Arbeit zu Ihren Projekten beizutragen." : "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work."}} </p>
+            <p>{{isGerman ? "Nehmen Sie Kontakt mit mir auf und teilen Sie mir Ihre Projektdetails mit. Ich würde mich freuen, Ihnen dabei helfen zu können, Software oder Webseiten zu erstellen, die Ihren Bedürfnissen entspricht!" : "Feel free to get in touch with your project details. I'd love the opportunity to help create a website that meets your needs!"}} </p>
+            <img src="./assets/img/swirlArrowRightYellow.png" alt="">
+        </div>
+        <div class="right">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <div class="field" (click)="focusInput(nameInput)">
+                    <label for="name">Name</label>
+                    <input #nameInput #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name.." required>
+                    @if (!name.valid && name.touched && !name.disabled) {
+                        <span>Pleaser enter a valid Name</span>
+                    }
+                </div>
+                <div class="field" (click)="focusInput(emailInput)">
+                    <label for="email">Email</label>
+                    <input #emailInput #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email.." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    @if (!email.valid && email.touched && !email.disabled) {
+                        <span>Pleaser enter a valid Email</span>
+                    }
+                </div>
+                <div class="field" (click)="focusInput(messageInput)">
+                    <label for="message">Message</label>
+                    <textarea #messageInput #message="ngModel" [(ngModel)]="contactData.message" type="message" id="message" name="message" placeholder="Your message.." required></textarea>
+                    
+                    @if (!message.valid && message.touched && !message.disabled) {
+                        <span>Pleaser enter a message</span>
+                    }
+                    
+                </div>
+                <div class="privacy-check">
+                    <input type="checkbox" id="privacyPolicy" name="privacyPolicy" [(ngModel)]="privacyAccepted" required>
+                    <label for="privacyPolicy">
+                        {{ isGerman ? "Ich habe die" : "I've read the" }} 
+                        <a routerLink="/privacyPolicy">{{ isGerman ? "Datenschutzrichtlinie" : "privacy policy" }}</a>
+                        {{ isGerman ? "gelesen und stimme der Verarbeitung meiner Daten zu." : "and agree to the processing of my data as outlined." }}
+                    </label>
+                </div>
+                
+                <button class="site-button-dark-bg" type="submit" [disabled]="!privacyAccepted" value="Submit">Send</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <app-footer></app-footer>
 </main>
+

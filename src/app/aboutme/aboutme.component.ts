@@ -10,9 +10,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss'
 })
-export class AboutmeComponent implements OnInit, OnDestroy{
-  location : string = "../../assets/img/Location_de.png";
-  isGerman : boolean = true;
+export class AboutmeComponent implements OnInit, OnDestroy {
+  location: string = "../../assets/img/Location_de.png";
+  isGerman: boolean = true;
   private languageSubscription!: Subscription;
 
 
@@ -22,8 +22,8 @@ export class AboutmeComponent implements OnInit, OnDestroy{
   ngOnInit() {
     this.languageSubscription = this.translationService.language$.subscribe((isGerman) => {
       this.isGerman = isGerman;
-      this.location = isGerman ? "../../assets/img/Location_de.png" : "../../assets/img/Location_eng.png"
-    }) 
+      this.location = isGerman ? "./assets/img/Location_de.png" : "./assets/img/Location_eng.png"
+    })
   }
 
   ngOnDestroy() {

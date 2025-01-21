@@ -1,13 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TranslationService } from '../translation.service';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { FooterComponent } from '../shared/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, FooterComponent, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -20,14 +22,13 @@ export class ContactComponent {
     email: "",
     message: "",
   }
+  privacyAccepted: boolean = false;
 
   mailTest = true;
   http = inject(HttpClient);
 
   constructor(private translationService: TranslationService) {
   }
-
-  
 
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
@@ -40,6 +41,10 @@ export class ContactComponent {
     },
   };
 
+  focusInput(input: HTMLInputElement | HTMLTextAreaElement): void {
+    input.focus();
+  }
+
   //testteil
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
@@ -48,6 +53,7 @@ export class ContactComponent {
           next: (response) => {
 
             ngForm.resetForm();
+            this.privacyAccepted = false;
           },
           error: (error) => {
             console.error(error);
@@ -56,6 +62,7 @@ export class ContactComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
+      this.privacyAccepted = false;
     }
   }
 

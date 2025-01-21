@@ -23,12 +23,17 @@
 html {
     font-family: 'Bricolage Grotesque';
     scroll-behavior: smooth;
+    color: #0E161F;
 }
 
 body {
     margin: 0;
 
 
+}
+
+h1 {
+    font-size: 4rem;
 }
 
 h2 {
@@ -40,21 +45,50 @@ h2 {
     display: none;
 }
 
-.site-button {
-        background-color: rgba($color: #000000, $alpha: 0.0);
-        border-style: inset;
-        color: whitesmoke;
-        border-radius: 1.25rem;
-        font-size: 1.25rem;
-        padding: 0.4rem 1.25rem;     
-        border-color: white;
-        border-bottom-width: 4px;
-        border-right-width: 4px;
-        transition: border-bottom-width 0.25s ease;
+@mixin site-button() {
+    background-color: rgba($color: #000000, $alpha: 0.0);
+    border-style: inset;
+    border-radius: 1.25rem;
+    font-size: 1.25rem;
+    padding: 0.4rem 1.25rem;
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+    transition: border-bottom-width 0.25s ease, border-right-width 0.25s ease, margin 0.25s ease;
 
-        &:hover {
-            border-width: 1px;
-            background-color: orange;
-            color: black;
-        }
+    &:hover {
+        margin-top: 6px;
+        border-width: 2px;
+        cursor: pointer;
+        background-color: #1AA8B5;
+        color: #0E161F;
+    }
+}
+
+.site-button-dark-bg {
+    @include site-button();
+    color: whitesmoke;
+    border-color: white;
+
+    &:disabled {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        color: rgba(255, 255, 255, 0.5); 
+        border-color: rgba(255, 255, 255, 0.5); 
+        cursor: not-allowed; 
+        pointer-events: none; 
+    }
+
+    &:not(:disabled):hover {
+        margin-top: 6px;
+        border-width: 2px;
+        cursor: pointer;
+        background-color: #1AA8B5;
+        color: #0E161F;
+    }
+
+}
+
+.site-button-bright-bg {
+    @include site-button();
+    color: #0E161F;
+    border-color: black;
 }

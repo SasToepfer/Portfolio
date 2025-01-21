@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  languageIcon: string = '../../../assets/img/switch_de.png';
+  languageIcon: string = './assets/img/switch_de.png';
   isGerman: boolean = true;
   isProjectPage: boolean = false;
 
@@ -23,7 +23,7 @@ export class HeaderComponent {
 
   toggleLanguage() {
     this.isGerman = !this.isGerman;
-    this.languageIcon = this.isGerman ? '../../../assets/img/switch_de.png' : '../../../assets/img/switch_eng.png';
+    this.languageIcon = this.isGerman ? './assets/img/switch_de.png' : './assets/img/switch_eng.png';
     const links = document.querySelectorAll('a');
     const circleWidth = this.isGerman ? '10rem' : '8rem';
     links.forEach((link) => {
