@@ -1,6 +1,6 @@
-<nav>
+<nav [ngClass]="{ 'invert': isPrivacyPolicy || isImprint}">
     <img src="" alt="">
-    <ng-container *ngIf="translationService.language$">
+    <ng-container>
         <a href="#about" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'über mich' : 'About me' }}</a>
         <a href="#skills" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
         <a href="#projects">{{ isGerman ? 'Projekte' : 'Projects' }}</a>

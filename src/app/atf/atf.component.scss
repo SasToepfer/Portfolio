@@ -46,10 +46,27 @@ main {
     flex-direction: column;
 
 
-
     h1 {
         font-size: 6rem;
         margin: 0;
+
+        span {
+            transition: transform 0.3s ease, text-transform 0.3s ease, color 0.3s ease;
+            text-transform: none;
+        }
+        .upper {
+            &:hover {
+                text-transform: lowercase;
+                color: yellow;
+            }
+        }
+
+        .lower {
+            &:hover {
+                text-transform: uppercase;
+                color: yellow;
+            }
+        }
     }
 
     .photo {
@@ -140,3 +157,5 @@ main {
     transform: translate(200%, 0) rotate(360deg); // Bewege das Icon beim Hover über den Button
     
 }
+
+

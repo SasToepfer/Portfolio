@@ -1,0 +1,19 @@
+.page-wrapper {
+    position: relative; 
+    min-height: calc(100vh - 10rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1; 
+}
+
+app-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+
+}

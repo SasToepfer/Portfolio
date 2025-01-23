@@ -1,11 +1,15 @@
-<main>
-    <a [routerLink]="[]">
-        <button class="underline-button">Legal Notice</button>
-    </a>
-    @for (item of footerButtons; track $index) {
-        <a [href]=item.link>
-            <button class="full-button">{{item.name}}</button>
-            <img class="waving-icon" [src]=item.icon alt="Waving Hand Icon">
+@if (!isProjectPage) {
+    <main>
+        <a [routerLink]="'imprint'">
+            <button [ngClass]="{ 'black-color': isPrivacyPolicy || isImprint}" class="underline-button">imprint</button>
         </a>
-    }
-</main>
+        @for (item of footerButtons; track $index) {
+            
+            <a [href]=item.link>
+                <button [ngClass]="{ 'black-color': isPrivacyPolicy || isImprint}" class="full-button" >{{item.name}}</button>
+                <img class="waving-icon" [src]=item.icon alt="Waving Hand Icon">
+            </a>
+        }
+    </main>
+}
+

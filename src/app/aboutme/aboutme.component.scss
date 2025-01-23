@@ -5,6 +5,11 @@ main {
     gap: 2rem;
     margin: 6rem;
 
+    a {
+        align-self: end;
+        height: 2rem;
+    }
+
     >img {
         width: 40%;
         height: auto;
@@ -12,7 +17,7 @@ main {
     }
     
     >div {
-        @include standard-flex(space-between);
+        @include standard-flex(space-between, start);
         flex-direction: column;
         width: 40%;
         padding-left: 1rem;
@@ -43,6 +48,7 @@ main {
             width: 8rem;
             align-self: flex-end;
         }
+        
     }
 }
 

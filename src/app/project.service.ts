@@ -16,6 +16,7 @@ export class ProjectService {
       duration: 0,
       path: "./assets/img/kanbanboard.jpg",
       software: ["html", "SCSS", "Angular"],
+      donwloadOnly: false,
       github: "",
       link: ""
     },
@@ -30,7 +31,8 @@ export class ProjectService {
       duration: 0.5,
       path: "./assets/img/ElPolloLoco.jpg",
       software: ["Javascript"],
-      github: "",
+      donwloadOnly: false,
+      github: "https://github.com/SasToepfer/ElPolloLoco",
       link: "" 
     },
     { 
@@ -44,8 +46,9 @@ export class ProjectService {
       duration: 18, 
       path: "./assets/img/rltd_screenshot.png",
       software: ["Unreal Engine","Git","Blender","Photoshop"],
+      donwloadOnly: true,
       github: "",
-      link: "" 
+      link: "https://www.dropbox.com/scl/fo/5sbsma3jgrjm2ctqd75en/AM3sOtP58EMqHvNMhHcurZQ?rlkey=zfncu96pxz3oxtdup8ijzdriz&st=pzvx2jgu&dl=0" 
     },
     { 
       name: "DA BUBBLE", 
@@ -58,6 +61,7 @@ export class ProjectService {
       duration: 0,
       path: "../../../assets/img/DABubble.png",
       software: ["Angular"],
+      donwloadOnly: false,
       github: "",
       link: "" 
     },

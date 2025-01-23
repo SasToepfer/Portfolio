@@ -1,5 +1,6 @@
 @use '../../../styles/mixins.scss' as *;
 nav {
+    
     position: absolute;
     top: 1rem;
     width: 95%;
@@ -16,6 +17,22 @@ nav {
 
 .black-text {
     color: black;
+}
+
+.black-bg {
+    background-color: black;
+    top: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+
+    >img {
+        padding: 0 10rem;
+    }
+}
+
+.invert {
+    filter: invert(1);
 }
 
 a {

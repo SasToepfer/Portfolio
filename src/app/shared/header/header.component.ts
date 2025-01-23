@@ -14,10 +14,14 @@ export class HeaderComponent {
   languageIcon: string = './assets/img/switch_de.png';
   isGerman: boolean = true;
   isProjectPage: boolean = false;
+  isPrivacyPolicy: boolean = false;
+  isImprint: boolean = false;
 
   constructor(public translationService: TranslationService, private router: Router) {
     this.router.events.subscribe(() => {
       this.isProjectPage = this.router.url.includes('/project/');
+      this.isPrivacyPolicy = this.router.url.includes('/privacy');
+      this.isImprint = this.router.url.includes('/imprint');
     });
   }
 

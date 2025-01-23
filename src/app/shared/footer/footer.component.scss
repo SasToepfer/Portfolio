@@ -1,17 +1,16 @@
 @use '../../../styles/mixins.scss' as *;
 
-@mixin footerButton() {}
-
 main {
+    background-color: transparent;
+    color: whitesmoke;
+    z-index: 10; 
+    height: 10rem;
     padding-left: 10rem;
     padding-right: 10rem;
-    padding-bottom: 5rem;
 
     @include standard-flex(space-between);
 
     >a {
-
-
         >button {
             font-size: 1.25rem;
             border-radius: 1.25rem;
@@ -29,7 +28,7 @@ main {
                 background-color: #1073EA;
                 ~ .waving-icon {
                     opacity: 1;
-                    transform: translate(-100%, 0) rotate(180deg); // Bewege das Icon beim Hover über den Button
+                    transform: translate(-100%, 0) rotate(180deg); 
                     
                 }
             }
@@ -38,12 +37,40 @@ main {
         .waving-icon {
             width: 2rem;
             position: relative; 
-            top: -1.25rem; // Positioniert das Icon über dem Button
-            left: -50%; // Zentriert das Icon horizontal
-            // transform: translateX(-50%);
-            transition: transform 0.7s ease, opacity 0.7s ease; // Animation für die Bewegung
-            opacity: 0; // Standardmäßig unsichtbar
+            top: -1.25rem; 
+            left: -50%; 
+            transition: transform 0.7s ease, opacity 0.7s ease;
+            opacity: 0;
             rotate: -180deg;
         }
+    }
+}
+
+.black-color {
+    color: black !important;
+}
+
+.underline-button {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 70%;
+        left: 0;
+        width: 6rem; 
+        height: 1rem; 
+        background-image: url(/assets/img/decoration_underline_swirl.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        // transform: translateX(-50%);
+        clip-path: inset(0 100% 0 0); 
+        transition: clip-path 0.25s ease; 
+    
+        
+    }
+    &:hover::after {
+        clip-path: inset(0 0 0 0);
     }
 }

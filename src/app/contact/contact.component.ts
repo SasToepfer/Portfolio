@@ -3,13 +3,12 @@ import { Subscription } from 'rxjs';
 import { TranslationService } from '../translation.service';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { FooterComponent } from '../shared/footer/footer.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, FooterComponent, RouterModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
