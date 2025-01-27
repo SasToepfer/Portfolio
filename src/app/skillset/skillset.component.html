@@ -1,30 +1,32 @@
-<main>
-  <div class="skill-textblock">
-    <div class="headline">
-      <span>{{ isGerman ? "MEIN STAPEL" : "MY STACK"}}</span>
-      <h2>{{ isGerman ? "Kompetenzen" : "Skill Set"}}</h2>
+<section>
+  <main>
+    <div class="skill-textblock">
+      <div class="headline">
+        <span>{{ isGerman ? "MEIN STAPEL" : "MY STACK"}}</span>
+        <h2>{{ isGerman ? "Kompetenzen" : "Skill Set"}}</h2>
+      </div>
+      <div class="torn-paper">
+          <span> 
+            {{ isGerman ?
+            "Durch meine Erfahrungen in der Spieleentwicklung, im 3D-Design und in der Frontend-Entwicklung"+
+            " habe ich ein vielseitiges Skillset aufgebaut. Von der Beherrschung kreativer Tools bis zur"+
+            " Umsetzung von Frontend-Technologien lerne und wachse ich mit jedem Projekt. Mein stark ausgeprägtes Growth-Mindset motiviert mich,"+
+            " stets neue Konzepte und Werkzeuge zu entdecken und mein Fachwissen kontinuierlich zu erweitern." 
+            : 
+            "I have built a diverse skill set through my experience in game development, 3D design, and frontend development."+
+            " From mastering creative tools to implementing frontend technologies, I thrive on learning and growing with every project."+
+            " My strong growth mindset drives me to continuously explore new concepts and tools to enhance my expertise."}}
+          </span>
+      </div>
+      <div class="empty"></div>
     </div>
-    <div class="torn-paper">
-        <span> 
-          {{ isGerman ?
-          "Durch meine Erfahrungen in der Spieleentwicklung, im 3D-Design und in der Frontend-Entwicklung"+
-          " habe ich ein vielseitiges Skillset aufgebaut. Von der Beherrschung kreativer Tools bis zur"+
-          " Umsetzung von Frontend-Technologien lerne und wachse ich mit jedem Projekt. Mein stark ausgeprägtes Growth-Mindset motiviert mich,"+
-          " stets neue Konzepte und Werkzeuge zu entdecken und mein Fachwissen kontinuierlich zu erweitern." 
-          : 
-          "I have built a diverse skill set through my experience in game development, 3D design, and frontend development."+
-          " From mastering creative tools to implementing frontend technologies, I thrive on learning and growing with every project."+
-          " My strong growth mindset drives me to continuously explore new concepts and tools to enhance my expertise."}}
-        </span>
+    <div class="skills-grid">
+      @for (item of myskills; track item.name) {
+      <app-singleskill [skill]="item"></app-singleskill>
+      }
+      @empty {
+      <p>No skills available.</p>
+      }
     </div>
-    <div class="empty"></div>
-  </div>
-  <div class="skills-grid">
-    @for (item of myskills; track item.name) {
-    <app-singleskill [skill]="item"></app-singleskill>
-    }
-    @empty {
-    <p>No skills available.</p>
-    }
-  </div>
-</main>
+  </main>
+</section>

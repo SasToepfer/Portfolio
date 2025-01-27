@@ -1,117 +1,202 @@
 @use '../../../styles/mixins.scss' as *;
-main {
+
+section {
     margin: 0;
     padding: 0;
-    min-width: 100%;
-    min-height: 100vh;
+    width: 100%;
     background-color: black;
     background-image: url(/assets/img/Notebookpaper.png);
-    background-size: cover;
+    background-size: 120% 100%;
     background-position: left;
-    @include standard-flex();
-    gap: 20%;
 
-    font-size: 1.25rem;
-
-    .back {
-        align-self: start;
-
-        >a {
-            text-decoration: none;
-            color: #0E161F;
-            @include standard-flex();
-            gap: 1rem;
-            font-size: 1.25rem;
-
-            &:hover {
-                color: #3355FF;
-            }
-
-            >img {
-                width: 2rem;
-            }
-        }
+    @media (max-width:1200px) {
+        
+        background-image: url(/assets/img/Notebookpaper_rotate.png);
+        background-size: 180% 150%;
+        background-position: top left;
+        
     }
 
-    .left {
-        width: calc(40% - 10rem);
-        @include standard-flex(center, start);
-        flex-direction: column;
+    >main {
+        min-height: 100vh;
+        @include standard-flex();
+        gap: 25%;
+        font-size: 1.25rem;
+    
+        @media (max-width:1200px) {
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+        }
 
-        .project-information {
-            padding-left: 4rem;
-
-
-            >h2 {
-                font-size: 2rem;
-            }
-
-            >h1 {
-                position: relative;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 60%;
-                    left: 0;
-                    width: 20rem;
-                    height: 2rem;
-                    background-image: url('/assets/img/decoration_underline_turk.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                }
-            }
+        @media (min-width: 1920px) {
+            max-width: 1920px;
+            margin: auto;
         }
     }
+}
 
-    .right {
-        width: calc(40% - 10rem);
-        @include standard-flex(center, end);
-        flex-direction: column;
-        color: whitesmoke;
+.back {
+    align-self: start;
+
+    @media (max-width: 1200px) {
+        display: none;
+    }
+
+    >a {
+        text-decoration: none;
+        color: #0E161F;
+        @include standard-flex();
+        gap: 1rem;
+        font-size: 1.25rem;
+
+        &:hover {
+            color: #3355FF;
+        }
 
         >img {
-            width: 100%;
-            margin-right: 3rem;
-            border-radius: 12px;
+            width: 2rem;
+        }
+    }
+}
+
+.left {
+    width: calc(40% - 10rem);
+    @include standard-flex(center, start);
+    flex-direction: column;
+
+    @media (max-width: 1200px) {
+        width: 90%;
+        margin-top: 5rem;
+    }
+
+    .project-information {
+        padding-left: 4rem;
+
+
+        >h2 {
+            font-size: 2rem;
         }
 
-        .buttons {
-            margin-top: 3rem;
-            margin-right: 3rem;
-            display: flex;
-            gap: 1rem;
-        }
+        >h1 {
+            position: relative;
 
-        .next {
-            >a {
-                @include standard-flex();
-                margin-top: 3rem;
-                gap: 0.5rem;
-                color: whitesmoke;
-                text-decoration: none;
+            @media (max-width:1550px) {
+                font-size: 2.5rem;
+            }
 
-                &:hover {
-                    color: #F7C518;
-                }
-    
+            &::after {
+                content: '';
+                position: absolute;
+                top: 60%;
+                left: 0;
+                width: 20rem;
+                height: 2rem;
+                background-image: url('/assets/img/decoration_underline_turk.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
     }
+}
 
-    .skills {
-        @include standard-flex(start);
-        gap: 1rem;
-        
-        >div {
-            @include standard-flex();
-            gap: 0.25rem;
-            
-            >img {
-                width: 2rem;
-            }
+.right {
+    width: calc(40% - 5rem);
+    @include standard-flex(center, end);
+    flex-direction: column;
+    color: whitesmoke;
+
+    @media (max-width: 1200px) {
+        width: 90%;
+        align-self: center;
+        margin-bottom: 2rem;
+    }
+
+    >img {
+        max-width: 100%;
+        margin-right: 3rem;
+        border-radius: 12px;
+
+        @media (max-width: 1200px) {
+            margin-right: 0;
+            width: 100%;
         }
-        
+    }
+
+    .buttons {
+        margin-top: 3rem;
+        margin-right: 3rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+
+}
+
+.skills {
+    @include standard-flex(start);
+    gap: 1rem;
+
+    >div {
+        @include standard-flex();
+        gap: 0.25rem;
+
+        >img {
+            width: 2rem;
+        }
+    }
+}
+
+.navigation-buttons {
+
+
+    @media (max-width:1200px) {
+        width: 100%;
+        font-size: 2.5rem;
+        @include standard-flex(space-between);
+    }
+}
+
+.mobile-back {
+    display: none;
+
+    @media (max-width:1200px) {
+        display: block;
+        font-size: 2.5rem;
+    }
+
+    >a {
+        @include standard-flex();
+        text-decoration: none;
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+        color: whitesmoke;
+
+        &:hover {
+            color: #3355FF;
+        }
+
+        >img {
+            width: 2rem;
+        }
+    }
+}
+
+.next {
+    >a {
+        @include standard-flex();
+        text-decoration: none;
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+        color: whitesmoke;
+
+
+        &:hover {
+            color: #F7C518;
+        }
+
     }
 }

@@ -2,6 +2,7 @@
     <main>
         <a [routerLink]="'imprint'">
             <button [ngClass]="{ 'black-color': isPrivacyPolicy || isImprint}" class="underline-button">imprint</button>
+            
         </a>
         @for (item of footerButtons; track $index) {
             

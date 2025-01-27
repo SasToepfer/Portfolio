@@ -1,29 +1,22 @@
-<!-- <nav [ngClass]="{ 'invert': isPrivacyPolicy || isImprint}">
-    <img [routerLink]="'/'" src="./assets/img/logorembg.png" alt="logo">
-    <ng-container>
-        <a href="#about" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'über mich' : 'About me' }}</a>
-        <a href="#skills" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
-        <a href="#projects">{{ isGerman ? 'Projekte' : 'Projects' }}</a>
-        <a href="#contact">{{ isGerman ? 'Kontakt' : 'Contact' }}</a>
-    </ng-container>
-    <img [src]="languageIcon" (click)="toggleLanguage()" alt="LanguageSwitch">
-</nav> -->
+<section>
 
-<nav [ngClass]="{ 'invert': isPrivacyPolicy || isImprint}">
-    <img [ngClass]="{ 'invert': isProjectPage}" [routerLink]="'/'" src="./assets/img/logorembg.png" alt="logo">
+    <nav [ngClass]="{ 'invert': isPrivacyPolicy || isImprint}">
 
-    <!-- Burger Menu Toggle Button -->
-    <button class="burger-menu-btn" (click)="toggleBurgerMenu()">
-        ☰
-    </button>
+        <img [ngClass]="{ 'invert': isProjectPage}" [routerLink]="'/'" src="./assets/img/logorembg.png" alt="logo">
 
-    <!-- Navigation Links -->
-    <div class="nav-links" [ngClass]="{ 'show': isBurgerMenuOpen }">
-        <button class="close-menu-btn" (click)="toggleBurgerMenu()">✖</button>
-        <a href="#about" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'über mich' : 'About me' }}</a>
-        <a href="#skills" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
-        <a href="#projects">{{ isGerman ? 'Projekte' : 'Projects' }}</a>
-        <a href="#contact">{{ isGerman ? 'Kontakt' : 'Contact' }}</a>
-        <img [src]="languageIcon" (click)="toggleLanguage()" alt="LanguageSwitch">
-    </div>
-</nav>
+        <button class="burger-menu-btn" (click)="toggleBurgerMenu()" [ngClass]="{ 'mobile-black-text': isProjectPage}">
+            ☰
+        </button>
+
+        <div class="nav-links" [ngClass]="{ 'show': isBurgerMenuOpen }">
+            <button class="close-menu-btn" (click)="toggleBurgerMenu()">✖</button>
+            <a href="#about" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'über mich' : 'About me' }}</a>
+            <a href="#skills" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
+            <a href="#projects" [ngClass]="{ 'mobile-black-text': isProjectPage}">{{ isGerman ? 'Projekte' : 'Projects'
+                }}</a>
+            <a href="#contact" [ngClass]="{ 'mobile-black-text': isProjectPage}">{{ isGerman ? 'Kontakt' : 'Contact'
+                }}</a>
+            <img [src]="languageIcon" (click)="toggleLanguage()" alt="LanguageSwitch">
+        </div>
+    </nav>
+</section>

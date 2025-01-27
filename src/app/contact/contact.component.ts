@@ -30,7 +30,7 @@ export class ContactComponent {
   }
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://sascha-toepfer-dev.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -45,8 +45,29 @@ export class ContactComponent {
   }
 
   //testteil
+  // onSubmit(ngForm: NgForm) {
+  //   if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  //       .subscribe({
+  //         next: (response) => {
+
+  //           ngForm.resetForm();
+  //           this.privacyAccepted = false;
+  //         },
+  //         error: (error) => {
+  //           console.error(error);
+  //         },
+  //         complete: () => console.info('send post complete'),
+  //       });
+  //   } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+  //     ngForm.resetForm();
+  //     this.privacyAccepted = false;
+  //   }
+  // }
+
+  // scharf
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
@@ -59,28 +80,8 @@ export class ContactComponent {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      ngForm.resetForm();
-      this.privacyAccepted = false;
-    }
+    } 
   }
-
-  // scharf
-  // onSubmit(ngForm: NgForm) {
-  //   if (ngForm.submitted && ngForm.form.valid) {
-  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //       .subscribe({
-  //         next: (response) => {
-
-  //           ngForm.resetForm();
-  //         },
-  //         error: (error) => {
-  //           console.error(error);
-  //         },
-  //         complete: () => console.info('send post complete'),
-  //       });
-  //   } 
-  // }
 
   ngOnInit() {
     this.languageSubscription = this.translationService.language$.subscribe((isGerman) => {

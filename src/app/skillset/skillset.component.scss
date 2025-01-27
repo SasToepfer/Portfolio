@@ -1,10 +1,20 @@
 @use '../../styles/mixins.scss' as *;
-main {
+section {
     background-image: url(/assets/img/SkillsBG.png);
     background-size: cover;
     background-position: bottom;
+    
+}
+main {
+    width: 100%;
+    min-height: 30vh;
+    @media (min-width: 1920px) {
+        max-width: 1920px;
+        margin: auto;
+    }
     color: whitesmoke;
-    // min-height: 80vh;
+
+    
 }
 
 .skill-textblock {

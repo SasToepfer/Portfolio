@@ -12,6 +12,11 @@ main {
         text-align: end;
     }
 
+    @media (min-width: 1920px) {
+        max-width: 1920px;
+        margin: auto;
+    }
+
     >div {
         @include standard-flex();
         gap: 1rem;
@@ -39,6 +44,12 @@ main {
         margin: 0;
     }
 
+    @media (min-width: 1920px) {
+        max-width: 1920px;
+        margin: auto;
+        min-height: 30vh;
+    }
+
 }
 
 .cards {
@@ -50,8 +61,6 @@ main {
     @media (max-width: 1200px) {
         position: static;
         width: 60%;
-        // height: 10rem;
-        // aspect-ratio: auto;
         margin: 4rem 0rem;
     }
 

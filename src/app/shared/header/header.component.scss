@@ -1,10 +1,17 @@
 @use '../../../styles/mixins.scss' as *;
-
-nav {
+section {
+    width: 100%;
     position: absolute;
+}
+nav {
     top: 1rem;
     width: 95%;
     @include standard-flex(space-between);
+
+    @media (min-width: 1920px) {
+        max-width: 1920px;
+        margin: auto;
+    }
 
     > img {
         width: 4rem;
@@ -82,21 +89,20 @@ nav {
             gap: 2rem;
             position: fixed;
             top: 0;
-            right: -100%; /* Startet außerhalb des Bildschirms */
+            right: -100%; 
             height: 50vh;
             overflow-y: auto;
-            transition: right 0.5s ease; /* Animiertes Einfahren */
+            transition: right 0.5s ease; 
             background: url('../../../assets/img/atf_background.png') no-repeat center bottom;
             background-size: cover;
             color: whitesmoke;
             z-index: 10;
 
-            // Breite des Menüs je nach Bildschirmgröße
             @media (max-width: 500px) {
-                width: 100%; /* Auf kleinen Bildschirmen nimmt es die gesamte Breite ein */
+                width: 100%; 
             }
             @media (min-width: 501px) {
-                width: 60%; /* Auf größeren Bildschirmen nimmt es 60% der Breite ein */
+                width: 60%; 
             }
         }
     }
@@ -104,6 +110,18 @@ nav {
 
 .black-text {
     color: black !important;
+    @media (max-width: 800px) {
+        color: whitesmoke !important;
+    }
+}
+.mobile-black-text {
+    @media (max-width: 1200px) {
+        color: black !important;
+    }
+
+    @media (max-width: 800px) {
+        color: whitesmoke !important;
+    }
 }
 
 .black-bg {

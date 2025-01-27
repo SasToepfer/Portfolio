@@ -1,49 +1,59 @@
-<main>
-    <div class="left">
-        <div class="back">
-            <a [routerLink]="'/'">
-                <img src="./assets/img/backArrowBlue.png" alt="">
-                {{isGerman ? "zurück" : "back"}}
-            </a>
-        </div>
-        <div class="project-information">
-            <h1>{{ project.name }}</h1>
-            <h2>{{ isGerman ? "Beschreibung" : "Description"}}</h2>
-            <p>{{ isGerman ? project.description_long_de : project.description_long_eng }}</p>
-            <h2>{{ isGerman ? "Details zur Umsetzung" : "Implementation Details" }}</h2>
-            <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
-            <p>
-                <b>{{ isGerman ? 'Dauer:' : 'Duration:' }}</b>
-                {{ project.duration < 1 ? 
-                (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4 + ' Weeks') 
-                : (isGerman ? project.duration + ' Monate' : project.duration + ' Month') }}
-            </p>
-            
-            <div class="skills">
-                @for (item of project.software; track $index) {
-                    <div>
-                        <img [src]="getIconPath(item)" alt="">
-                        <span>{{item}}</span>
-                    </div>
-                }
+<section>
+    <main>
+
+        <div class="left">
+            <div class="back">
+                <a [routerLink]="'/'">
+                    <img src="./assets/img/backArrowBlue.png" alt="">
+                    {{isGerman ? "zurück" : "back"}}
+                </a>
+            </div>
+            <div class="project-information">
+                <h1>{{ project.name }}</h1>
+                <h2>{{ isGerman ? "Beschreibung" : "Description"}}</h2>
+                <p>{{ isGerman ? project.description_long_de : project.description_long_eng }}</p>
+                <h2>{{ isGerman ? "Details zur Umsetzung" : "Implementation Details" }}</h2>
+                <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
+                <p>
+                    <b>{{ isGerman ? 'Dauer:' : 'Duration:' }}</b>
+                    {{ project.duration < 1 ? (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4
+                        + ' Weeks' ) : (isGerman ? project.duration + ' Monate' : project.duration + ' Month' ) }} </p>
+
+                        <div class="skills">
+                            @for (item of project.software; track $index) {
+                            <div>
+                                <img [src]="getIconPath(item)" alt="">
+                                <span>{{item}}</span>
+                            </div>
+                            }
+                        </div>
             </div>
         </div>
-    </div>
-    <div class="right">
-        <img [src]="project.path" alt="">
-        <div class="buttons">
-            @if (project.donwloadOnly) {
+        <div class="right">
+            <img [src]="project.path" alt="">
+            <div class="buttons">
+                @if (project.donwloadOnly) {
                 <a [href]="project.link" target="_blank"><button class="site-button-dark-bg">Download</button></a>
-            }@else {
+                }@else {
                 <a [href]="project.github" target="_blank"><button class="site-button-dark-bg">Github</button></a>
                 <a [href]="project.link" target="_blank"><button class="site-button-dark-bg">Live Test</button></a>
-            }
+                }
+            </div>
+            <div class="navigation-buttons">
+                <div class="mobile-back">
+                    <a [routerLink]="'/'">
+                        <img src="./assets/img/backArrowBlue.png" alt="">
+                        {{isGerman ? "zurück" : "back"}}
+                    </a>
+                </div>
+                <div class="next">
+                    <a [routerLink]="['/project', goToNextProject()]">
+                        {{ isGerman ? "Nächstes Projekt" : "Next Project"}}
+                        <img src="./assets/img/next_project_arrow_yellow.png" alt="">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="next">
-            <a [routerLink]="['/project', goToNextProject()]">
-                {{ isGerman ? "Nächstes Projekt" : "Next Project"}}
-                <img src="./assets/img/next_project_arrow_yellow.png" alt="">
-            </a>
-        </div>
-    </div>
-</main>
+
+    </main>
+</section>

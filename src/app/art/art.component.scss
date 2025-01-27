@@ -6,6 +6,20 @@
     padding: 20px;
     width: 90%;
     margin: 0 auto;
+
+    @media (min-width: 1920px) {
+        max-width: 1920px;
+        margin: auto;
+    }
+}
+
+.headline {
+    width: 50%;
+    align-self: start;
+
+    @media (max-width: 1200px) {
+        width: 100%;
+    }
 }
 
 h2 {
@@ -103,7 +117,6 @@ h2 {
     grid-area: p13;
 }
 
-/* Overlay Styling */
 .overlay {
     position: fixed;
     top: 0;
