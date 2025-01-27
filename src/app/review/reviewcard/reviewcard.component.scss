@@ -1,11 +1,12 @@
 @use '../../../styles/mixins.scss' as *;
 
 main {
-    padding: 3rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
     width: 100%;
     height: 100%;
-    background-size: cover; // optional
-    background-position: center; // optional
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
     border-radius: 50px;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
@@ -15,6 +16,8 @@ main {
         transition: transform 0.2s ease-in-out, z-index 0.2s ease-in-out;
     }
 
+    
+
     >div {
         @include standard-flex(space-between);
         flex-direction: column;
@@ -23,11 +26,17 @@ main {
 
         >span {
             font-size: 1.5rem;
+            width: 80%;
+
+            @media (max-width: 1200px) {
+                padding-bottom: 2rem;
+                
+            }
         }
 
         >div {
             @include standard-flex(space-between);
-            width: 100%;
+            width: 80%;
             font-size: 1.5rem;
             font-weight: 700;
 

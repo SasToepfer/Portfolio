@@ -3,14 +3,27 @@
 main {
     background-color: transparent;
     color: whitesmoke;
-    z-index: 10; 
-    height: 10rem;
+    z-index: 10;
+    height: 6rem;
     padding-left: 10rem;
     padding-right: 10rem;
 
     @include standard-flex(space-between);
 
+    @media (max-width: 1200px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @media (max-width: 500px) {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    
+
     >a {
+
         >button {
             font-size: 1.25rem;
             border-radius: 1.25rem;
@@ -21,24 +34,28 @@ main {
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+        
 
         .full-button {
             position: relative;
+
             &:hover {
                 background-color: #1073EA;
-                ~ .waving-icon {
+
+                ~.waving-icon {
                     opacity: 1;
-                    transform: translate(-100%, 0) rotate(180deg); 
-                    
+                    transform: translate(-100%, 0) rotate(180deg);
+
                 }
             }
-            
+
         }
+
         .waving-icon {
             width: 2rem;
-            position: relative; 
-            top: -1.25rem; 
-            left: -50%; 
+            position: relative;
+            top: -1.25rem;
+            left: -50%;
             transition: transform 0.7s ease, opacity 0.7s ease;
             opacity: 0;
             rotate: -180deg;
@@ -58,18 +75,19 @@ main {
         position: absolute;
         top: 70%;
         left: 0;
-        width: 6rem; 
-        height: 1rem; 
+        width: 6rem;
+        height: 1rem;
         background-image: url(/assets/img/decoration_underline_swirl.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         // transform: translateX(-50%);
-        clip-path: inset(0 100% 0 0); 
-        transition: clip-path 0.25s ease; 
-    
-        
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.25s ease;
+
+
     }
+
     &:hover::after {
         clip-path: inset(0 0 0 0);
     }

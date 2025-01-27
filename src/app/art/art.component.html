@@ -1,0 +1,28 @@
+<section class="gallery">
+    <div>
+        <span> {{ isGerman ? "Meine Kreationen" : "MY CREATION"}}</span>
+        <h2>{{ isGerman ? "3D-Art" : "3D-Art"}}</h2>
+        <p>{{ isGerman ? "Werfen Sie einen Blick auf einige der 3D-Assets, die ich im Rahmen verschiedener Projekte erstellt habe – von meiner Arbeit als professioneller 3D-Artist bis hin zu persönlichen und Hobby-Projekten. Jedes Modell zeigt meinen Fokus auf saubere Topologie, optimiertes UV-Mapping und Liebe zum Detail. Zu den Highlights zählen Assets aus meinem letzten Game-Projekt sowie Designs, die während meiner Tätigkeit bei der Degussa Bank entstanden sind." 
+        : 
+        "Take a look at some of the 3D assets I’ve created across various projects, from my work as a professional 3D artist to personal and hobby creations. Each piece reflects my focus on clean topology, optimized UV mapping, and attention to detail. Highlights include assets from my last game project and designs developed during my previous role at Degussa Bank."}}</p>
+    </div>
+    <div class="grid-container">
+        @for (image of images; track $index) {
+        <div class="grid-item" [ngClass]="'grid-item' + ($index + 1)" (click)="openOverlay($index)">
+            <img [src]="image.url" [alt]="image.alt || 'Bild'" />
+        </div>
+        }
+    </div>
+    @if (isOverlayOpen) {
+        <div class="overlay">
+            <div class="overlay-content">
+                <button class="close-button" (click)="closeOverlay()">✖</button>
+                <img [src]="currentImage.url" [alt]="currentImage.alt || 'Großes Bild'" />
+                <div class="button-group">
+                  <button (click)="prevImage()">← Vorheriges Bild</button>
+                  <button (click)="nextImage()">Nächstes Bild →</button>
+                </div>
+              </div>
+        </div>
+    }
+</section>

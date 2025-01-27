@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { TranslationService } from '../../translation.service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -16,6 +16,7 @@ export class HeaderComponent {
   isProjectPage: boolean = false;
   isPrivacyPolicy: boolean = false;
   isImprint: boolean = false;
+  isBurgerMenuOpen: boolean = false; // Zustand des Burger-Menüs
 
   constructor(public translationService: TranslationService, private router: Router) {
     this.router.events.subscribe(() => {
@@ -36,6 +37,10 @@ export class HeaderComponent {
 
 
     this.translationService.switchLanguage();
+  }
+
+  toggleBurgerMenu() {
+    this.isBurgerMenuOpen = !this.isBurgerMenuOpen;
   }
 
 }

@@ -20,11 +20,19 @@ main {
     align-items: center;
 }
 
+
+
 .icons-wrapper {
     @include standard-flex(end);
     flex-direction: column;
     gap: 1rem;
     height: 80%;
+}
+
+.icons-wrapper-mobile {
+    @include standard-flex();
+    display: none;
+    gap: 1rem;
 }
 
 .mediaicons {
@@ -49,11 +57,15 @@ main {
     h1 {
         font-size: 6rem;
         margin: 0;
+        @media (max-width: 500px) {
+                font-size: 4rem;
+        }
 
         span {
             transition: transform 0.3s ease, text-transform 0.3s ease, color 0.3s ease;
             text-transform: none;
         }
+
         .upper {
             &:hover {
                 text-transform: lowercase;
@@ -95,24 +107,36 @@ main {
 
 
 .photo {
-    width: 200px;
+    width: 14rem;
 }
+
+.photo-mobile {
+    width: 14rem;
+    display: none;
+}
+
+
 
 .hover-button {
     position: relative;
     background-color: transparent;
     border: 2px solid whitesmoke;
     color: whitesmoke;
-    padding: 1.25rem 6rem; // Definiert konstante Höhe, aber dynamische Breite
+    padding: 1.25rem 6rem; 
     font-size: 1.5rem;
     border-radius: 24px;
     overflow: hidden;
-    display: inline-block; 
+    display: inline-block;
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: blue; // Hintergrundfarbe beim Hover
+        background-color: blue;
         padding: 1.25rem 8rem;
+    }
+
+    @media (max-width: 1200px) {
+        background-color: blue !important;
+        padding: 1.25rem 8rem !important;
     }
 
     .default-text,
@@ -124,38 +148,102 @@ main {
     }
 
     .default-text {
-        opacity: 1; 
+        opacity: 1;
+
+        @media (max-width: 1200px) {
+            opacity: 0 !important;
+        }
     }
 
     .hover-text {
-        opacity: 0; 
+        opacity: 0;
+
+        @media (max-width: 1200px) {
+            opacity: 1 !important;
+        }
     }
 
     &:hover .default-text {
-        opacity: 0; 
+        opacity: 0;
     }
 
     &:hover .hover-text {
-        opacity: 1; 
+        opacity: 1;
     }
 }
 
-// Hier wird das Icon stilisiert
 .waving-icon {
-    position: absolute; // Das Icon wird über dem Button positioniert
-    top: 3rem; // Positioniert das Icon über dem Button
-    left: 20%; // Zentriert das Icon horizontal
+    position: absolute;
+    top: 3rem; 
+    left: 20%; 
     transform: translateX(-50%);
-    transition: transform 0.7s ease, opacity 0.7s ease; // Animation für die Bewegung
-    opacity: 0; // Standardmäßig unsichtbar
+    transition: transform 0.7s ease, opacity 0.7s ease; 
+    opacity: 0; 
     rotate: -360deg;
-}
 
-// Füge einen Hover-Effekt zum Button hinzu, um die Animation zu triggern
-.hover-button:hover ~ .waving-icon {
-    opacity: 1;
-    transform: translate(200%, 0) rotate(360deg); // Bewege das Icon beim Hover über den Button
     
 }
 
+.hover-button:hover~.waving-icon {
+    opacity: 1;
+    transform: translate(200%, 0) rotate(360deg); 
 
+}
+
+@media (max-width: 1200px) {
+    
+
+    .photo {
+        display: none !important;
+    }
+
+    .photo-mobile {
+        margin-top: 2rem;
+        display: block;
+        align-self: center;
+        rotate: 12deg;
+    }
+
+    .icons-wrapper {
+        display: none;
+    }
+
+    .icons-wrapper-mobile {
+        display: flex;
+    }
+
+    .atf-wrapper {
+        @include standard-flex();
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-wrapper {
+        @include standard-flex(center, start);
+        width: 100%;
+
+        .top {
+            margin-left: 10rem;
+
+            @media (max-width: 500px) {
+                margin-left: 2rem;
+            }
+        }
+    
+        .bottom {
+            width: 90%;
+            margin-right: 2rem;
+
+            @media (max-width: 500px) {
+                margin-right: 1rem;
+                width: 90%;
+            }
+        }
+    }
+
+    .waving-icon {
+        top: -3rem;
+    }
+}

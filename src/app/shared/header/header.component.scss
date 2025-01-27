@@ -1,22 +1,109 @@
 @use '../../../styles/mixins.scss' as *;
+
 nav {
-    
     position: absolute;
     top: 1rem;
     width: 95%;
     @include standard-flex(space-between);
 
-    >img {
-        width: 8rem;
+    > img {
+        width: 4rem;
+        margin-left: 5rem;
 
         &:hover {
             cursor: pointer;
         }
     }
+
+    .burger-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: whitesmoke;
+
+        @media (max-width: 800px) {
+            display: block;
+            
+        }
+    }
+
+    .nav-links {
+        width: 80%;
+        @include standard-flex(space-between);
+        gap: 1rem;
+
+        .close-menu-btn {
+            display: none;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: whitesmoke;
+            cursor: pointer;
+    
+            &:hover {
+                color: #ff5555; /* Optional: Hover-Farbe für den Schließen-Button */
+            }
+
+            @media (max-width: 800px) {
+                display: block;
+            }
+        }
+
+        
+
+        &.show {
+            display: flex;
+            right: 0;
+        }
+
+        a {
+            font-size: 1.2rem;
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        > img {
+            width: 8rem;
+    
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 800px) {
+            display: none;
+            @include standard-flex();
+            flex-direction: column;
+            gap: 2rem;
+            position: fixed;
+            top: 0;
+            right: -100%; /* Startet außerhalb des Bildschirms */
+            height: 50vh;
+            overflow-y: auto;
+            transition: right 0.5s ease; /* Animiertes Einfahren */
+            background: url('../../../assets/img/atf_background.png') no-repeat center bottom;
+            background-size: cover;
+            color: whitesmoke;
+            z-index: 10;
+
+            // Breite des Menüs je nach Bildschirmgröße
+            @media (max-width: 500px) {
+                width: 100%; /* Auf kleinen Bildschirmen nimmt es die gesamte Breite ein */
+            }
+            @media (min-width: 501px) {
+                width: 60%; /* Auf größeren Bildschirmen nimmt es 60% der Breite ein */
+            }
+        }
+    }
 }
 
 .black-text {
-    color: black;
+    color: black !important;
 }
 
 .black-bg {
@@ -44,7 +131,7 @@ a {
     &::after {
         content: '';
         position: absolute;
-        top: -90%;
+        top: -110%;
         left: 50%;
         width: var(--circleWidth, 10rem);
         height: 5rem;

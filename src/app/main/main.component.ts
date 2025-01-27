@@ -5,11 +5,12 @@ import { SkillsetComponent } from '../skillset/skillset.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ReviewComponent } from '../review/review.component';
 import { ContactComponent } from '../contact/contact.component';
+import { ArtComponent } from '../art/art.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [AtfComponent, AboutmeComponent, SkillsetComponent, ProjectsComponent, ReviewComponent, ContactComponent],
+  imports: [AtfComponent, AboutmeComponent, SkillsetComponent, ProjectsComponent, ArtComponent, ReviewComponent, ContactComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

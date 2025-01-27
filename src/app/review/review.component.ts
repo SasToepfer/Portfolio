@@ -22,7 +22,7 @@ export class ReviewComponent {
     cardimg: 1
   },
   {
-    text: "war mal da",
+    text: "lorem ipusm at ek atartis mo silicus et sankti de penomi padri tu es sancti et ominem esc",
     name: "Tom Ate",
     link: "",
     cardimg: 2
