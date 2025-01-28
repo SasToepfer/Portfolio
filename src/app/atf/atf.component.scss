@@ -19,7 +19,7 @@ main {
     height: 100%;
     align-items: center;
 
-    @media (min-width: 1920px) {
+    @media (min-width: 1921px) {
         max-width: 1920px;
         margin: auto;
     }
@@ -69,6 +69,10 @@ main {
         span {
             transition: transform 0.3s ease, text-transform 0.3s ease, color 0.3s ease;
             text-transform: none;
+
+            @media (max-width: 500px) {
+                font-size: 4rem;
+        }
         }
 
         .upper {
@@ -230,9 +234,9 @@ main {
         width: 100%;
 
         .top {
-            margin-left: 10rem;
+            margin-left: 5rem;
 
-            @media (max-width: 500px) {
+            @media (max-width: 550px) {
                 margin-left: 2rem;
             }
         }
@@ -241,9 +245,9 @@ main {
             width: 90%;
             margin-right: 2rem;
 
-            @media (max-width: 500px) {
+            @media (max-width: 550px) {
                 margin-right: 1rem;
-                width: 90%;
+                width: 95%;
             }
         }
     }

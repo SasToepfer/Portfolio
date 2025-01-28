@@ -38,7 +38,7 @@ export class FooterComponent {
     {
       name: "Email",
       icon: "./assets/img/icons/MailIconSmall.png",
-      link: "mailto:sascha-toepfer@googlemail.com"
+      link: "mailto:info@sascha-toepfer-dev.de"
     },
   ]
 }

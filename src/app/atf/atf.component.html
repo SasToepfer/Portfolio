@@ -7,7 +7,7 @@
             <a href="https://github.com/SasToepfer" target="_blank">
                 <img class="mediaicons" src="./assets/img/icons/GithubIconSmall.png" alt="GitHub">
             </a>
-            <a href="mailto:sascha-toepfer@googlemail.com" target="_blank">
+            <a href="mailto:info@sascha-toepfer-dev.de" target="_blank">
                 <img class="mediaicons" src="./assets/img/icons/MailIconSmall.png" alt="Mail">
             </a>
         </div>
@@ -31,7 +31,7 @@
                     </h1>
                     <img class="waving-icon" src="./assets/img/waving_hand.png" alt="Waving Hand Icon">
                 </div>
-                <img class="photo" src="./assets/img/profile_picture.png" alt="Profile Picture">
+                <img class="photo" [src]="imageSrc" (mouseover)="onPictureHover()" (mouseout)="onPictureLeave()" alt="Profile Picture">
             </div>
             <div class="bottom">
                 <h1>
