@@ -13,7 +13,7 @@ export class ReviewcardComponent {
   @Input() review!: ReviewInterface;
 
   get cardImagePath(): string{
-    return this.review.cardimg === 1 ? "./assets/img/CardA.png" : "./assets/img/CardB.png";
+    return this.review.cardimg === 1 ? "./assets/img/CardA.jpg" : "./assets/img/CardB.jpg";
     
   }
 }

@@ -16,20 +16,20 @@ export class ReviewComponent {
   private languageSubscription!: Subscription;
 
   reviews: ReviewInterface[] = [{
-    text: "ganz okay",
-    name: "Peter Lustig",
+    text: "will be filled until the end of March",
+    name: "Person A",
     link: "",
     cardimg: 1
   },
   {
-    text: "lorem ipusm at ek atartis mo silicus et sankti de penomi padri tu es sancti et ominem esc",
-    name: "Tom Ate",
+    text: "will be filled until the end of March",
+    name: "Person B",
     link: "",
     cardimg: 2
   },
   {
-    text: "sympathisch, man kann sich unterhalten",
-    name: "Jim Panse",
+    text: "will be filled until the end of March",
+    name: "Person C",
     link: "",
     cardimg: 1
   }];

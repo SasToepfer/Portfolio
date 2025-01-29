@@ -1,16 +1,17 @@
 @if (!isProjectPage) {
-    <main>
-        <a [routerLink]="'imprint'">
-            <button [ngClass]="{ 'black-color': isPrivacyPolicy || isImprint}" class="underline-button">imprint</button>
-            
-        </a>
-        @for (item of footerButtons; track $index) {
-            
-            <a [href]=item.link>
-                <button [ngClass]="{ 'black-color': isPrivacyPolicy || isImprint}" class="full-button" >{{item.name}}</button>
-                <img class="waving-icon" [src]=item.icon alt="Waving Hand Icon">
+    <section>
+        <a href="#atf"><img class="logo" src="./assets/img/logorembg.png" alt="logo"></a>
+        <main>
+            <a [routerLink]="'imprint'">
+                <button [ngClass]="{ 'black-color': isPrivacyPolicy || isImprint}" class="underline-button">{{isGerman ? "Impressum" : "imprint"}}</button>
             </a>
-        }
-    </main>
+            @for (item of footerButtons; track $index) {
+                <a [href]=item.link>
+                    <button [ngClass]="{ 'black-color': isPrivacyPolicy || isImprint}" class="full-button" >{{item.name}}</button>
+                    <img class="waving-icon" [src]=item.icon alt="Waving Hand Icon">
+                </a>
+            }
+        </main>
+    </section>
 }
 

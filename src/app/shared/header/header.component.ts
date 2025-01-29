@@ -43,4 +43,10 @@ export class HeaderComponent {
     this.isBurgerMenuOpen = !this.isBurgerMenuOpen;
   }
 
+  closeBurgerMenu() {
+    if (this.isBurgerMenuOpen) {
+      this.isBurgerMenuOpen = !this.isBurgerMenuOpen;
+    }
+  }
+
 }

@@ -7,10 +7,10 @@ export class ProjectService {
   private projects = [
     {
       name: "Join",
-      description_short_eng: "Task manager inspired by the Kanban System...",
-      description_short_de: "Aufgabenmanager nach dem Vorbild des Kanban-Systems...",
-      description_long_eng: "Task manager inspired by the Kanban System...",
-      description_long_de: "Aufgabenmanager nach dem Vorbild des Kanban-Systems...",
+      description_short_eng: "Current ongoing group Projekt - Task manager inspired by the Kanban System...",
+      description_short_de: "Momentan laufendes Gruppenprojekt - Aufgabenmanager nach dem Vorbild des Kanban-Systems...",
+      description_long_eng: "Coming Soon - Task manager inspired by the Kanban System...",
+      description_long_de: "Coming Soon - Aufgabenmanager nach dem Vorbild des Kanban-Systems...",
       implementation_de: "",
       implementation_eng: "",
       duration: 0,
@@ -44,27 +44,27 @@ export class ProjectService {
       implementation_de: "Der gesamte kreative Prozess, einschließlich Game Design und 3D-Art, lag in meiner Verantwortung. Die 3D-Modelle wurden in Blender erstellt und texturiert. Darüber hinaus habe ich die Programmierung der Spielmechaniken in Unreal Engine übernommen, einschließlich der Implementierung von Tower- und Gegner-Logik, der Erstellung einzigartiger Fähigkeiten durch Getränkekombinationen und der Gestaltung des Fortschrittssystems. Neben der technischen Umsetzung war es mir wichtig, eine nahtlose Integration zwischen Gameplay und visuellem Design zu gewährleisten. Versionskontrolle und Organisation erfolgten über GitHub und Nuclino.",
       implementation_eng: "The entire creative process, including game design and 3D art, was handled solely by me. I created 3D models in Blender and textured them. Additionally, I programmed core gameplay mechanics in Unreal Engine, including the implementation of tower and enemy logic, the unique ability system based on drink combinations, and the progression system. Ensuring seamless integration between gameplay and visual design was a key focus. Version control and project organization were managed through GitHub and Nuclino.",
       duration: 18, 
-      path: "./assets/img/rltd_screenshot.png",
+      path: "./assets/img/rltd_screenshot.jpg",
       software: ["Unreal Engine","Git","Blender","Photoshop"],
       donwloadOnly: true,
       github: "",
       link: "https://www.dropbox.com/scl/fo/5sbsma3jgrjm2ctqd75en/AM3sOtP58EMqHvNMhHcurZQ?rlkey=zfncu96pxz3oxtdup8ijzdriz&st=pzvx2jgu&dl=0" 
     },
-    { 
-      name: "DA BUBBLE", 
-      description_short_eng: "coming soon", 
-      description_short_de: "coming soon", 
-      description_long_eng: "coming soon", 
-      description_long_de: "coming soon", 
-      implementation_de: "",
-      implementation_eng: "",
-      duration: 0,
-      path: "../../../assets/img/DABubble.png",
-      software: ["Angular"],
-      donwloadOnly: false,
-      github: "",
-      link: "" 
-    },
+    // { 
+    //   name: "DA BUBBLE", 
+    //   description_short_eng: "coming soon", 
+    //   description_short_de: "coming soon", 
+    //   description_long_eng: "coming soon", 
+    //   description_long_de: "coming soon", 
+    //   implementation_de: "",
+    //   implementation_eng: "",
+    //   duration: 0,
+    //   path: "../../../assets/img/DABubble.png",
+    //   software: ["Angular"],
+    //   donwloadOnly: false,
+    //   github: "",
+    //   link: "" 
+    // },
   ];
   constructor() { }
 

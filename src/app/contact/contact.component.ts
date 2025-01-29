@@ -1,4 +1,4 @@
-import { Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TranslationService } from '../translation.service';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
@@ -22,7 +22,7 @@ export class ContactComponent {
     message: "",
   }
   privacyAccepted: boolean = false;
-
+  messageSent: boolean = false;
   mailTest = true;
   http = inject(HttpClient);
 
@@ -44,43 +44,26 @@ export class ContactComponent {
     input.focus();
   }
 
-  //testteil
-  // onSubmit(ngForm: NgForm) {
-  //   if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
-  //       .subscribe({
-  //         next: (response) => {
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-  //           ngForm.resetForm();
-  //           this.privacyAccepted = false;
-  //         },
-  //         error: (error) => {
-  //           console.error(error);
-  //         },
-  //         complete: () => console.info('send post complete'),
-  //       });
-  //   } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-  //     ngForm.resetForm();
-  //     this.privacyAccepted = false;
-  //   }
-  // }
-
-  // scharf
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
             this.privacyAccepted = false;
+            this.messageSent = true; 
+            setTimeout(() => this.messageSent = false, 5000);
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } 
+    }
   }
 
   ngOnInit() {

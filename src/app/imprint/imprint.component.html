@@ -1,15 +1,15 @@
 
 <main>
-    <h1>Impressum</h1>
+    <h1>{{isGerman ? "Impressum" : "Imprint"}}</h1>
 
     <p>Sascha T&ouml;pfer<br />
     Berliner Strasse 90<br />
     Geb&auml;ude 44<br />
     61449 Steinbach</p>
     
-    <h2>Kontakt</h2>
-    <p>Telefon: +49 (0) 152 29528355<br />
+    <h2>{{isGerman ? "Kontakt" : "contact"}}</h2>
+    <p>{{isGerman ? "Telefon:" : "phone:"}}: +49 (0) 152 29528355<br />
     E-Mail: info&#64;sascha-toepfer-dev.de</p>
     
-    <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+    <p>{{isGerman ? "Quelle:" : "Source:"}}: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
 </main>

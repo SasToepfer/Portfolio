@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { TranslationService } from '../../translation.service';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-
+  isGerman: boolean = true;
+  private languageSubscription!: Subscription;
   isProjectPage: boolean = false;
   isPrivacyPolicy: boolean = false;
   isImprint: boolean = false;
@@ -41,4 +43,16 @@ export class FooterComponent {
       link: "mailto:info@sascha-toepfer-dev.de"
     },
   ]
+
+  ngOnInit() {
+    this.languageSubscription = this.translationService.language$.subscribe((isGerman) => {
+      this.isGerman = isGerman;
+    })
+  }
+
+  ngOnDestroy() {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
+  }
 }

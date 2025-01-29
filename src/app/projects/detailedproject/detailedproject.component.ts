@@ -60,8 +60,6 @@ export class DetailedprojectComponent {
   }
 
   getIconPath(skillName: string): string | undefined {
-    console.log(skillName);
-    
     const skill = this.skills.find(s => s.name.toLowerCase() === skillName.toLowerCase());
     return skill ? skill.path : undefined;
   }

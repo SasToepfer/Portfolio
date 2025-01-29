@@ -36,7 +36,7 @@
                     <input type="checkbox" id="privacyPolicy" name="privacyPolicy" [(ngModel)]="privacyAccepted" required>
                     <label for="privacyPolicy">
                         {{ isGerman ? "Ich habe die" : "I've read the" }} 
-                        <a routerLink="/privacyPolicy">{{ isGerman ? "Datenschutzrichtlinie" : "privacy policy" }}</a>
+                        <a routerLink="/privacyPolicy" (click)="scrollToTop()">{{ isGerman ? "Datenschutzrichtlinie" : "privacy policy" }}</a>
                         {{ isGerman ? "gelesen und stimme der Verarbeitung meiner Daten zu." : "and agree to the processing of my data as outlined." }}
                     </label>
                 </div>
@@ -44,6 +44,9 @@
                     <img src="./assets/img/swirlArrowRightYellow.png" alt="">
                     <button class="site-button-dark-bg" type="submit" [disabled]="!privacyAccepted" value="Submit">{{isGerman ? "Senden" : "Send"}}</button>
                 </div>
+                @if (messageSent) {
+                    <span class="success-message">{{ isGerman ? "Danke für deine Nachricht! Ich melde mich bald." : "Thank you for your message! I'll get back to you soon." }}</span>
+                }
             </form>
         </div>
     </section>

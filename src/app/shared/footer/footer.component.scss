@@ -1,12 +1,40 @@
 @use '../../../styles/mixins.scss' as *;
 
+section {
+    @media (min-width: 1921px) {
+        max-width: 1920px;
+        margin: auto;
+    }
+    
+
+    .logo {
+        width: 4rem;
+        margin-left: 8rem;
+
+        &:hover {
+            cursor: pointer;
+            filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+        }
+
+        @media (max-width: 1200px) {
+            margin-left: 2rem;
+        }
+    
+        @media (max-width: 500px) {
+            margin-left: 0.5rem;
+        }
+    
+        
+    }
+}
+
 main {
     background-color: transparent;
     color: whitesmoke;
     z-index: 10;
     height: 6rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
 
     @include standard-flex(space-between);
 
@@ -18,11 +46,6 @@ main {
     @media (max-width: 500px) {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-    }
-
-    @media (min-width: 1px) {
-        max-width: 1920px;
-        margin: auto;
     }
 
     >a {
@@ -62,6 +85,11 @@ main {
             transition: transform 0.7s ease, opacity 0.7s ease;
             opacity: 0;
             rotate: -180deg;
+
+            @media (max-width: 1200px) {
+                display: none;
+                
+            }
         }
     }
 }
@@ -84,7 +112,6 @@ main {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        // transform: translateX(-50%);
         clip-path: inset(0 100% 0 0);
         transition: clip-path 0.25s ease;
 

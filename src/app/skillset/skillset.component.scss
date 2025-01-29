@@ -1,6 +1,6 @@
 @use '../../styles/mixins.scss' as *;
 section {
-    background-image: url(/assets/img/SkillsBG.png);
+    background-image: url(/assets/img/SkillsBG.jpg);
     background-size: cover;
     background-position: bottom;
     
@@ -21,7 +21,7 @@ main {
 
     @include standard-flex();
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1250px) {
         flex-direction: column;
     }
 
@@ -61,13 +61,11 @@ main {
     width: 50%;
     margin: 10rem 1rem;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 2rem;
     padding-bottom: 4rem;
     height: auto;
     background-image: url(/assets/img/SkillsDescription.png);
-    background-size: auto;
-    background-position: bottom;
-    background-repeat: no-repeat;
+    background-size: 100% 100%;
     color: black;
     text-align: center;
 
