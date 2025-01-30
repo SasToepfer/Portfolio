@@ -6,12 +6,10 @@
         </button>
         <div class="nav-links" [ngClass]="{ 'show': isBurgerMenuOpen }">
             <button class="close-menu-btn" (click)="toggleBurgerMenu()">✖</button>
-            <a href="#about" (click)="closeBurgerMenu()" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'über mich' : 'About me' }}</a>
-            <a href="#skills" (click)="closeBurgerMenu()" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
-            <a href="#projects" (click)="closeBurgerMenu()" [ngClass]="{ 'mobile-black-text': isProjectPage}">{{ isGerman ? 'Projekte' : 'Projects'
-                }}</a>
-            <a href="#contact" (click)="closeBurgerMenu()" [ngClass]="{ 'mobile-black-text': isProjectPage}">{{ isGerman ? 'Kontakt' : 'Contact'
-                }}</a>
+            <a (click)="scrollToSection('about')" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'über mich' : 'About me' }}</a>
+            <a (click)="scrollToSection('skills')" [ngClass]="{ 'black-text': isProjectPage}">{{ isGerman ? 'Fähigkeiten' : 'Skills' }}</a>
+            <a (click)="scrollToSection('projects')" [ngClass]="{ 'mobile-black-text': isProjectPage}">{{ isGerman ? 'Projekte' : 'Projects'}}</a>
+            <a (click)="scrollToSection('contact')" [ngClass]="{ 'mobile-black-text': isProjectPage}">{{ isGerman ? 'Kontakt' : 'Contact'}}</a>
             <img [src]="languageIcon" (click)="toggleLanguage()" alt="LanguageSwitch">
         </div>
     </nav>

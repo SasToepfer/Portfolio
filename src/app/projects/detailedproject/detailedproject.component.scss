@@ -38,9 +38,11 @@ section {
 
 .back {
     align-self: start;
+    margin-top: 5rem;
 
     @media (max-width: 1200px) {
         display: none;
+        margin-top: 0rem;
     }
 
     >a {
@@ -72,6 +74,7 @@ section {
 
     .project-information {
         padding-left: 4rem;
+        width: 100%;
 
 
         >h2 {

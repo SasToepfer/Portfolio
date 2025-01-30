@@ -5,12 +5,21 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class TranslationService {
-  currentLanguage: 'de' | 'en' = 'de';
-  private languageSubject = new BehaviorSubject<boolean>(true); 
+  private languageSubject = new BehaviorSubject<boolean>(this.getSavedLanguage());
   language$ = this.languageSubject.asObservable();
 
   switchLanguage() {
-    const currentLanguage = this.languageSubject.value;
-    this.languageSubject.next(!currentLanguage);
+    const newLanguage = !this.languageSubject.value;
+    this.languageSubject.next(newLanguage);
+    localStorage.setItem('language', newLanguage ? 'de' : 'en'); // Speichern
+  }
+
+  getCurrentLanguage(): boolean {
+    return this.languageSubject.value;
+  }
+
+  private getSavedLanguage(): boolean {
+    const savedLang = localStorage.getItem('language');
+    return savedLang ? savedLang === 'de' : true; // Standard ist Deutsch
   }
 }
