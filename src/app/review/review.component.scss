@@ -57,7 +57,7 @@ main {
 .cards {
     position: absolute;
     width: 30%;
-    aspect-ratio: 2.5;
+    aspect-ratio: auto;
     transition: transform 0.3s ease, z-index 0.3s ease;
     
     @media (max-width: 1200px) {

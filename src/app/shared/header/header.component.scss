@@ -9,7 +9,7 @@ section {
 
 nav {
     top: 1rem;
-    width: 95%;
+    width: 100%;
     @include standard-flex(space-between);
 
     @media (min-width: 1921px) {
@@ -19,7 +19,7 @@ nav {
 
     > img {
         width: 4rem;
-        margin-left: 5rem;
+        margin-left: 2rem;
 
         &:hover {
             cursor: pointer;
@@ -37,6 +37,7 @@ nav {
 
         @media (max-width: 800px) {
             display: block;
+            margin-right: 2rem;
         }
     }
 
@@ -81,6 +82,7 @@ nav {
 
         > img {
             width: 8rem;
+            margin-right: 2rem;
     
             &:hover {
                 cursor: pointer;

@@ -19,13 +19,12 @@ export class ArtComponent {
     { url: './assets/img/3D-Art/DBS5.jpg', alt: 'Bild 5' },
     { url: './assets/img/3D-Art/DBS6.jpg', alt: 'Bild 6' },
     { url: './assets/img/3D-Art/DBS7.jpg', alt: 'Bild 7' },
-    { url: './assets/img/3D-Art/Catni1.jpg', alt: 'Bild 8' },
+    { url: './assets/img/3D-Art/TeehousePicture.jpg', alt: 'Bild 8' },
     { url: './assets/img/3D-Art/Catni2.jpg', alt: 'Bild 9' },
     { url: './assets/img/3D-Art/CatniForestRender.jpg', alt: 'Bild 10' },
     { url: './assets/img/3D-Art/TD_Enemies.jpg', alt: 'Bild 11' },
     { url: './assets/img/3D-Art/TD_Drinks.jpg', alt: 'Bild 12' },
     { url: './assets/img/3D-Art/CarRender_Side2.jpg', alt: 'Bild 13' },
-    // Weitere Bilder hier...
   ];
 
   isOverlayOpen = false;

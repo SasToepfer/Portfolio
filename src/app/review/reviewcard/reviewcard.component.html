@@ -1,6 +1,6 @@
 <main [ngStyle]="{'background-image': 'url(' + cardImagePath + ')'}">
     <div>
-        <span>{{review.text}}</span>
+        <span>{{isGerman ? review.text_de : review.text_en}}</span>
         <div>
             <span>{{review.name}}</span>
             <a href={{review.link}}><img src="./assets/img/profileImage.png" alt=""></a>

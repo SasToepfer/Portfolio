@@ -1,7 +1,13 @@
+
+
 main {
     margin: 1rem 10rem;
     height: calc(100vh - 4rem);
-    overflow: hidden;
+    
+
+    @media (max-width: 800px) {
+        margin: 1rem;
+    }
 
     @media (min-width: 1921px) {
         max-width: 1920px;

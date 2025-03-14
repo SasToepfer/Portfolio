@@ -1,8 +1,8 @@
 @use '../../../styles/mixins.scss' as *;
 
 main {
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -23,17 +23,16 @@ main {
         flex-direction: column;
         height: 100%;
         font-size: 1.25rem;
+        overflow: auto;
 
         
 
         >span {
-            font-size: 1.5rem;
-            width: 80%;
+            font-size: 1.25rem;
+            width: 90%;
+            padding-bottom: 2rem;
 
-            @media (max-width: 1200px) {
-                padding-bottom: 2rem;
-                
-            }
+            
         }
 
         >div {
@@ -41,6 +40,7 @@ main {
             width: 80%;
             font-size: 1.5rem;
             font-weight: 700;
+            height: 2.5rem;
 
             >a {
                 display: flex;
@@ -57,7 +57,7 @@ main {
 
                 >img {
                     width: 100%;
-                    height: 100%;
+                    height: 2rem;
                 }
             }
         }

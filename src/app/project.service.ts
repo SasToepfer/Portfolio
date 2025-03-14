@@ -7,18 +7,18 @@ export class ProjectService {
   private projects = [
     {
       name: "Join",
-      description_short_eng: "Current ongoing group Projekt - Task manager inspired by the Kanban System...",
-      description_short_de: "Momentan laufendes Gruppenprojekt - Aufgabenmanager nach dem Vorbild des Kanban-Systems...",
-      description_long_eng: "Coming Soon - Task manager inspired by the Kanban System...",
-      description_long_de: "Coming Soon - Aufgabenmanager nach dem Vorbild des Kanban-Systems...",
-      implementation_de: "",
-      implementation_eng: "",
-      duration: 0,
+      description_short_eng: "A Kanban-inspired task manager. Features real-time task synchronization, Firebase authentication, and a drag-and-drop interface for seamless task management. Built with Angular and Firebase.",
+      description_short_de: "Ein Kanban-basierter Aufgabenmanager. Bietet Echtzeit-Synchronisierung, Firebase-Authentifizierung und eine Drag-and-Drop-Oberfläche für intuitives Task-Management. Erstellt mit Angular und Firebase.",
+      description_long_eng: "Join is a collaborative task manager designed for organizing and tracking tasks efficiently. Users can create, assign, and move tasks across different workflow stages. The project was developed in a small team of 3 people, focusing on usability and real-time updates.",
+      description_long_de: "Join ist ein kollaborativer Aufgabenmanager zur effizienten Organisation und Verfolgung von Tasks. Nutzer können Aufgaben erstellen, zuweisen und durch verschiedene Workflow-Phasen verschieben. Das Projekt wurde in einem kleinen Team aus 3 Personen mit Fokus auf Benutzerfreundlichkeit und Echtzeit-Updates entwickelt.",
+      implementation_de: "Ich war verantwortlich für die Implementierung des Firebase-Datenbankzugriffs, die Benutzer-Authentifizierung und den Großteil der Kernlogik. Zudem übernahm ich eine leitende Rolle, um die Projektkoordination und technische Entscheidungen zu steuern",
+      implementation_eng: "I was responsible for implementing Firebase database access, authentication, and most of the project’s core logic. Additionally, I took on a leadership role, ensuring smooth project coordination and technical decision-making.",
+      duration: 0.75,
       path: "./assets/img/kanbanboard.jpg",
       software: ["html", "SCSS", "Angular"],
       donwloadOnly: false,
-      github: "",
-      link: ""
+      github: "https://github.com/SasToepfer/join",
+      link: "https://sascha-toepfer-dev.de/join"
     },
     { 
       name: "El Pollo Loco", 

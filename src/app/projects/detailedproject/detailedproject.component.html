@@ -16,7 +16,7 @@
                 <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
                 <p>
                     <b>{{ isGerman ? 'Dauer:' : 'Duration:' }}</b>
-                    {{ project.duration < 1 ? (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4
+                    {{ project.duration <= 1 ? (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4
                         + ' Weeks' ) : (isGerman ? project.duration + ' Monate' : project.duration + ' Month' ) }} </p>
 
                         <div class="skills">
