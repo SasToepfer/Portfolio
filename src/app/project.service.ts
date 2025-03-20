@@ -11,9 +11,9 @@ export class ProjectService {
       description_short_de: "Ein Kanban-basierter Aufgabenmanager. Bietet Echtzeit-Synchronisierung, Firebase-Authentifizierung und eine Drag-and-Drop-Oberfläche für intuitives Task-Management. Erstellt mit Angular und Firebase.",
       description_long_eng: "Join is a collaborative task manager designed for organizing and tracking tasks efficiently. Users can create, assign, and move tasks across different workflow stages. The project was developed in a small team of 3 people, focusing on usability and real-time updates.",
       description_long_de: "Join ist ein kollaborativer Aufgabenmanager zur effizienten Organisation und Verfolgung von Tasks. Nutzer können Aufgaben erstellen, zuweisen und durch verschiedene Workflow-Phasen verschieben. Das Projekt wurde in einem kleinen Team aus 3 Personen mit Fokus auf Benutzerfreundlichkeit und Echtzeit-Updates entwickelt.",
-      implementation_de: "Ich war verantwortlich für die Implementierung des Firebase-Datenbankzugriffs, die Benutzer-Authentifizierung und den Großteil der Kernlogik. Zudem übernahm ich eine leitende Rolle, um die Projektkoordination und technische Entscheidungen zu steuern",
+      implementation_de: "Ich war verantwortlich für die Implementierung des Firebase-Datenbankzugriffs, die Benutzer-Authentifizierung und den Großteil der Kernlogik. Zudem übernahm ich eine leitende Rolle, um die Projektkoordination und technische Entscheidungen zu steuern.",
       implementation_eng: "I was responsible for implementing Firebase database access, authentication, and most of the project’s core logic. Additionally, I took on a leadership role, ensuring smooth project coordination and technical decision-making.",
-      duration: 0.75,
+      duration: 1,
       path: "./assets/img/kanbanboard.jpg",
       software: ["html", "SCSS", "Angular"],
       donwloadOnly: false,
@@ -21,19 +21,19 @@ export class ProjectService {
       link: "https://sascha-toepfer-dev.de/join"
     },
     { 
-      name: "El Pollo Loco", 
+      name: "Noitahyppy", 
       description_short_eng: "2D platformer game with jump-and-run mechanics, built using an object-oriented approach. Players control a character to dodge enemies, collect mana runes, and cast spells like fireballs to overcome obstacles and defeat opponents.", 
       description_short_de: "2D-Plattformspiel mit Sprung- und Laufmechanik, basierend auf einem objektorientierten Ansatz. Der Spieler steuert eine Figur, weicht Gegnern aus, sammelt Mana-Runen und setzt Zauber wie Feuerbälle ein, um Hindernisse zu überwinden und Gegner zu besiegen.", 
       description_long_eng: "2D platformer game with jump-and-run mechanics, built using an object-oriented approach. Players control a character to dodge enemies, collect mana runes, and cast spells like fireballs to overcome obstacles and defeat opponents.", 
       description_long_de: "2D-Plattformspiel mit Sprung- und Laufmechanik, basierend auf einem objektorientierten Ansatz. Der Spieler steuert eine Figur, weicht Gegnern aus, sammelt Mana-Runen und setzt Zauber wie Feuerbälle ein, um Hindernisse zu überwinden und Gegner zu besiegen.", 
       implementation_de: "Selbst erstellte 3D-Modelle wurden in Blender animiert und als 2D-Animationen exportiert, um sie nahtlos in die Spielwelt zu integrieren. Die Entwicklung der Spielmechanik und Logik erfolgte in JavaScript innerhalb einer HTML-Canvas-Umgebung. Dabei lag der Fokus auf einer strukturierten, objektorientierten Herangehensweise, um den Code effizient und wartbar zu gestalten.",
       implementation_eng: "Custom 3D models were created and animated in Blender, then exported as 2D animations for seamless integration into the game world. The game mechanics and logic were developed in JavaScript within an HTML Canvas environment. Emphasis was placed on a structured, object-oriented workflow to ensure efficient and maintainable code.",
-      duration: 0.5,
+      duration: 0.75,
       path: "./assets/img/ElPolloLoco.jpg",
       software: ["Javascript"],
       donwloadOnly: false,
       github: "https://github.com/SasToepfer/ElPolloLoco",
-      link: "https://sascha-toepfer-dev.de/el-pollo-loco/" 
+      link: "https://sascha-toepfer-dev.de/Noitahyppy/" 
     },
     { 
       name: "RLTD", 

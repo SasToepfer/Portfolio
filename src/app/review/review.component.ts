@@ -30,10 +30,10 @@ export class ReviewComponent {
     cardimg: 2
   },
   {
-    text_en: "Sascha was a key point of contact for our team due to his expertise in game development and as a 3D artist. He immediately incorporated his professional experience into our project onboarding. His feedback provided practical solutions and guided the entire team. Thank you, Sascha – it was a truly valuable learning experience!",
-    text_de: "Sascha war aufgrund seiner Expertise in der Spielentwicklung und 3D-Artist eine zentrale Anlaufstelle für unser Team. Seine Berufserfahrung hat er sofort in unsere Projekteinarbeitung einfließen lassen. Durch sein Feedback hat er die praktische Lösung nähergebracht und das gesamte Team geführt. Danke Sascha. Es war sehr lehrreich.",
-    name: "Andreas Welker",
-    link: "https://www.linkedin.com/in/andreaswelker/",
+    text_en: "Even though we haven’t worked directly together on a group project, Sascha has always been a great support to me. He was always the first to volunteer to help me and other students with challenges – and he did so with incredible patience and clarity, almost like a second mentor. Especially on the days when things were tough for me, he always motivated me to keep going and not give up. His willingness to help and his positive nature have been a huge support during the training and one of the reasons I stayed committed. For that, I am truly grateful!",
+    text_de: "Auch wenn wir bisher keine direkte Gruppenarbeit zusammen hatten, war Sascha immer eine große Unterstützung für mich. Er war stets der Erste, der sich freiwillig meldete, um mir und anderen Schülern bei Schwierigkeiten zu helfen – und das mit einer unglaublichen Geduld und Klarheit, fast wie ein zweiter Mentor. Besonders an den Tagen, an denen es für mich schwer war, hat er mich immer motiviert, nicht aufzugeben und einfach weiterzumachen. Seine Hilfsbereitschaft und sein positives Wesen haben mir enorm geholfen während der Schulung und waren einer der Gründe, warum ich drangeblieben bin. Dafür bin ich ihm sehr dankbar!",
+    name: "Osahon Schmolze",
+    link: "https://www.linkedin.com/in/osahon-schmolze-0b51181a2/",
     cardimg: 1
   }];
 
