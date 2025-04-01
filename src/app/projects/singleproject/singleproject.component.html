@@ -1,7 +1,13 @@
 <main>
+  @if (project.name != "More Projects") {
     <a [routerLink]="['/project', project.name]">
-        <img [src]="project.path" alt="{{ project.name }}">
-      </a>
+      <img [src]="project.path" alt="{{ project.name }}">
+    </a>
+  } @else {
+    <a [routerLink]="['/moreProjects',]">
+      <img (click)="scrollToTop()" [src]="project.path" alt="{{ project.name }}">
+    </a>
+  }
     <h3>{{ project.name }}</h3>
     <p>{{ isGerman ? project.description_short_de : project.description_short_eng }}</p>
 </main>

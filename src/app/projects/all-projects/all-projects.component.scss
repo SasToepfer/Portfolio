@@ -1,0 +1,117 @@
+@use '../../../styles/mixins.scss' as *;
+
+h1 {
+    @media (max-width: 1150px) {
+        font-size: 3rem;
+        width: 90%;
+    }
+}
+
+h2 {
+    @media (max-width: 1150px) {
+        font-size: 2rem;
+    }
+}
+
+main {
+    background-color: rgb(26, 24, 24);
+    color: whitesmoke;
+    .site-wrapper {
+        @include standard-flex();
+        flex-direction: column;
+
+        @media (max-width: 1150px) {
+            padding-top: 4rem;
+        }
+        
+        >h2 {
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        
+
+        @media (min-width: 1921px) {
+            max-width: 1920px;
+            margin: auto;
+        }
+
+
+        .project-container {
+            width: 95%;
+            height: fit-content;
+            @include standard-flex(space-between, start);
+
+            @media (max-width: 1150px) {
+                @include standard-flex();
+                flex-direction: column;
+            }
+
+            .project-information {
+                width: 50%;
+                height: calc(fit-content);
+                margin-bottom: 4rem;
+
+                @media (max-width: 1150px) {
+                    width: 90%;
+                }
+
+                >a {
+                    @include standard-flex(flex-end);
+                    text-decoration: none;
+                }
+
+                .skills {
+                    @include standard-flex(start);
+                    gap: 1rem;
+
+                    >div {
+                        @include standard-flex();
+                        gap: 0.25rem;
+
+                        >img {
+                            width: 2rem;
+                        }
+                    }
+                }
+
+                .buttons {
+                    @include standard-flex(flex-end);
+                    gap: 1rem;
+                    height: 2rem;
+                }
+            }
+
+            >a {
+                @include standard-flex(flex-end);
+                width: 50%;
+                margin-top: 2rem;
+                margin-bottom: 3rem;
+
+                @media (max-width: 1150px) {
+                    @include standard-flex();
+                    width: 90%;
+                    margin-top: 0;
+                }
+
+                >img {
+                    max-width: 80%;
+                    width: auto;
+                    height: 35vh;
+
+                    @media (max-width: 1150px) {
+                        max-width: 100%;
+                        width: 90%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.bottom {
+    margin-bottom: 8rem;
+}

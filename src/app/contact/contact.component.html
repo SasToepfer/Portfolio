@@ -10,14 +10,14 @@
         <div class="right">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="field" (click)="focusInput(nameInput)">
-                    <label for="name">{{isGerman ? "Wie ist dein Name?":"What´s your name?"}}</label>
+                    <label for="name">{{isGerman ? "Wie lautet dein Name?":"What´s your name?"}}</label>
                     <input #nameInput #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name" [attr.placeholder]="isGerman ? 'Dein Name steht hier' : 'your name goes here'" required>
                     @if (!name.valid && name.touched && !name.disabled) {
                         <span>{{isGerman ? "Oops! Sieht so aus als würde dein Name fehlen" : "Oops! it seems your name is missing" }}</span>
                     }
                 </div>
                 <div class="field" (click)="focusInput(emailInput)">
-                    <label for="email">{{isGerman ? "Wie ist dein E-mail?":"What´s your email?"}}</label>
+                    <label for="email">{{isGerman ? "Wie lautet deine E-mail?":"What´s your email?"}}</label>
                     <input #emailInput #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email" [attr.placeholder]="isGerman ? 'deine@email.de' : 'your@email.com'" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     @if (!email.valid && email.touched && !email.disabled) {
                         <span>{{isGerman ?  "Hoppla! Deine email wird benötigt" : "Hoppla! your email is required" }}</span>

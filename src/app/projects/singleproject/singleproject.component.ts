@@ -26,6 +26,9 @@ export class SingleprojectComponent {
   constructor(private translationService: TranslationService) {
   }
 
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   ngOnInit() {
     this.languageSubscription = this.translationService.language$.subscribe((isGerman) => {

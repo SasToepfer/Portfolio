@@ -1,0 +1,133 @@
+<main>
+    <div class="site-wrapper">
+        <h1>{{ isGerman ? "Developer Akademy Projekte" : "Developer Akademy projects"}}</h1>
+        @for (project of daProjects; track $index) {
+        <div class="project-container">
+            <div class="project-information">
+                <h2>{{ project.name }}</h2>
+                <h3>{{ isGerman ? "Beschreibung" : "Description"}}</h3>
+                <p>{{ isGerman ? project.description_short_de : project.description_short_eng }}</p>
+                <h3>{{ isGerman ? "Details zur Umsetzung" : "Implementation Details" }}</h3>
+                <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
+                <p>
+                    <b>{{ isGerman ? 'Dauer:' : 'Duration:' }}</b>
+                    {{ project.duration <= 1 ? (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4
+                        + ' Weeks' ) : (isGerman ? project.duration + ' Monate' : project.duration + ' Month' ) }} </p>
+
+                        <div class="skills">
+                            @for (item of project.software; track $index) {
+                            <div>
+                                <img [src]="getIconPath(item)" alt="">
+                                <span>{{item}}</span>
+                            </div>
+                            }
+                        </div>
+                        <div class="buttons">
+                            @if (project.github != "") {
+                            <a [href]="project.github" target="_blank"><button
+                                    class="site-button-dark-bg">Github</button></a>
+                            }
+                            @if (project.link != "") {
+                            @if (project.donwloadOnly) {
+                            <a [href]="project.link" target="_blank"><button
+                                    class="site-button-dark-bg">Download</button></a>
+                            } @else {
+                            <a [href]="project.link" target="_blank"><button
+                                    class="site-button-dark-bg">Test</button></a>
+                            }
+                            }
+                        </div>
+            </div>
+
+            <a>
+                <img [src]="project.path" alt="{{ project.name }}">
+            </a>
+        </div>
+        }
+        <h1>{{ isGerman ? "Freiberufliche/Hobby Projekte" : "Self-employed/Hobby projects"}}</h1>
+        @for (project of selfEmployedProjects; track $index) {
+        <div class="project-container">
+            <div class="project-information">
+                <h2>{{ project.name }}</h2>
+                <h3>{{ isGerman ? "Beschreibung" : "Description"}}</h3>
+                <p>{{ isGerman ? project.description_short_de : project.description_short_eng }}</p>
+                <h3>{{ isGerman ? "Details zur Umsetzung" : "Implementation Details" }}</h3>
+                <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
+                <p>
+                    <b>{{ isGerman ? 'Dauer:' : 'Duration:' }}</b>
+                    {{ project.duration <= 1 ? (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4
+                        + ' Weeks' ) : (isGerman ? project.duration + ' Monate' : project.duration + ' Month' ) }} </p>
+
+                        <div class="skills">
+                            @for (item of project.software; track $index) {
+                            <div>
+                                <img [src]="getIconPath(item)" alt="">
+                                <span>{{item}}</span>
+                            </div>
+                            }
+                        </div>
+                        <div class="buttons">
+                            @if (project.github != "") {
+                            <a [href]="project.github" target="_blank"><button
+                                    class="site-button-dark-bg">Github</button></a>
+                            }
+                            @if (project.link != "") {
+                            @if (project.donwloadOnly) {
+                            <a [href]="project.link" target="_blank"><button
+                                    class="site-button-dark-bg">Download</button></a>
+                            } @else {
+                            <a [href]="project.link" target="_blank"><button
+                                    class="site-button-dark-bg">Test</button></a>
+                            }
+                            }
+                        </div>
+            </div>
+
+            <a>
+                <img [src]="project.path" alt="{{ project.name }}">
+            </a>
+        </div>
+        }
+        <h1>{{ isGerman ? "Studien-Projekte" : "study projects"}}</h1>
+        @for (project of studyProjects; track $index) {
+        <div class="project-container">
+            <div class="project-information">
+                <h2>{{ project.name }}</h2>
+                <h3>{{ isGerman ? "Beschreibung" : "Description"}}</h3>
+                <p>{{ isGerman ? project.description_long_de : project.description_long_eng }}</p>
+                <h3>{{ isGerman ? "Details zur Umsetzung" : "Implementation Details" }}</h3>
+                <p>{{ isGerman ? project.implementation_de : project.implementation_eng }}</p>
+                <p>
+                    <b>{{ isGerman ? 'Dauer:' : 'Duration:' }}</b>
+                    {{ project.duration <= 1 ? (isGerman ? project.duration * 4 + ' Wochen' : project.duration * 4
+                        + ' Weeks' ) : (isGerman ? project.duration + ' Monate' : project.duration + ' Month' ) }} </p>
+
+                        <div class="skills">
+                            @for (item of project.software; track $index) {
+                            <div>
+                                <img [src]="getIconPath(item)" alt="">
+                                <span>{{item}}</span>
+                            </div>
+                            }
+                        </div>
+                        <div class="buttons">
+                            @if (project.github != "") {
+                            <a [href]="project.github" target="_blank"><button
+                                    class="site-button-dark-bg">Github</button></a>
+                            }
+                        @if (project.link != "") {
+
+
+                        <a [href]="project.link" target="_blank"><button class="site-button-dark-bg">Video</button></a>
+                        }
+                        </div>
+            </div>
+
+            <a>
+                <img [src]="project.path" alt="{{ project.name }}">
+            </a>
+        </div>
+        }
+        <div class="bottom"></div>
+    </div>
+</main>
